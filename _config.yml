@@ -6,7 +6,7 @@ gems:
 # Site settings
 title: "Jonty Sinai"
 description: > # this means to ignore newlines until "email:"
-  Mathematician - Yogi - Runner - Dreamer
+  Mathematician. Yogi. Runner. Dreamer
 
 email: jontysinai@gmail.com
 #blog log
@@ -34,6 +34,13 @@ twitter_handle: '@jontysinai_'
 
 # social icons and sharing options
 social:
+  - icon:	github
+    url:	https://github.com/jontysinai
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+    
   - icon:	twitter
     url:	https://twitter.com/jontysinai_
     desc: Follow me on twitter
@@ -47,13 +54,6 @@ social:
 #    share_url: https://www.facebook.com/sharer.php
 #    share_title: ?t=
 #    share_link: "&amp;u="
-
-  - icon:	github
-    url:	https://github.com/jontysinai
-    desc:	Fork me on github
-    share_url:
-    share_title:
-    share_link:
 
 #  - icon:	google-plus
 #    url:	https://google.com/???
