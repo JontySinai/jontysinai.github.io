@@ -10,15 +10,15 @@ description: > # this means to ignore newlines until "email:"
 
 email: jontysinai@gmail.com
 #blog log
-logo: "/assets/images/mandla-n.png"
+logo: "/assets/images/jonty_potrait.jpg"
 float_logo: true # true, false (default)
 
 # blog cover
-cover: "https://source.unsplash.com/WeYamle9fDM/1600x900"
+cover: "https://source.unsplash.com/9r4kV5VrdSQ/1600x900"
 
 name: 'Jonty Sinai'
 author: 'Jonty Sinai'
-author_image: "/assets/images/mandla-n.png"
+author_image: "/assets/images/jonty_potrait.jpg"
 
 paginate:	5
 
