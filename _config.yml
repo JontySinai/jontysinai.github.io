@@ -4,11 +4,11 @@ gems:
   - jekyll-paginate
 
 # Site settings
-title: "Mandla Magagula"
+title: "Jonty Sinai"
 description: > # this means to ignore newlines until "email:"
-   Blockchain Tech Explorer, Journeyman, The Coding Ground
+  Mathematician - Yogi - Runner - Dreamer
 
-email: mandla.magagulamail@gmail.com
+email: jontysinai@gmail.com
 #blog log
 logo: "/assets/images/mandla-n.png"
 float_logo: true # true, false (default)
@@ -16,16 +16,16 @@ float_logo: true # true, false (default)
 # blog cover
 cover: "https://source.unsplash.com/collection/981639/1600x900"
 
-name: 'Mandla Magagula'
-author: 'Mandla Magagula'
+name: 'Jonty Sinai'
+author: 'Jonty Sinai'
 author_image: "/assets/images/mandla-n.png"
 
 paginate:	5
 
-url: "http://mandlamag.github.io" # the base hostname & protocol for your site
+url: "https://jontysinai.github.io" # the base hostname & protocol for your site
 baseurl: ""
 #used to display twitter cards
-twitter_handle: '@mandlamag'
+twitter_handle: '@jontysinai_'
 
 #fill in disqus shortname to use disqus
 #disqus: disqus-shortname
@@ -35,7 +35,7 @@ twitter_handle: '@mandlamag'
 # social icons and sharing options
 social:
   - icon:	twitter
-    url:	https://twitter.com/mandlamag
+    url:	https://twitter.com/jontysinai_
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
@@ -49,7 +49,7 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/mandlamag
+    url:	https://github.com/jontysinai
     desc:	Fork me on github
     share_url:
     share_title:
