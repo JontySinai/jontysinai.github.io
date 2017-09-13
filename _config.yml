@@ -6,19 +6,19 @@ gems:
 # Site settings
 title: "Mandla Magagula"
 description: > # this means to ignore newlines until "email:"
-   Medium inspired
+   Blockchain Developer, The Coding Ground
 
 email: mandla.magagulamail@gmail.com
 #blog logo
-logo: "/assets/images/df_logo.jpg"
+logo: "/assets/images/mandla-n.png"
 float_logo: true # true, false (default)
 
 # blog cover
-cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
+cover: "/assets/images/space.jpg"
 
 name: 'Mandla Magagula'
 author: 'Mandla Magagula'
-author_image: "/assets/images/author.jpg"
+author_image: "/assets/images/mandla-n.png"
 
 paginate:	5
 
