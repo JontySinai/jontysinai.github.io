@@ -2,13 +2,8 @@ mediator
 ========
 
 A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](http://blog.base68.com).
+[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog .
 
-Screenshots
---------
-![screenshot](/assets/images/screenshot1.jpg)
-![screenshot](/assets/images/screenshot2.jpg)
-![screenshot](/assets/images/screenshot3.jpg)
 
 Features
 -------
@@ -21,8 +16,8 @@ Features
 
 Getting Started
 ---
-- [Fork this repository](https://github.com/dirkfabisch/mediator)
-- Clone it: `git clone https://github.com/YOUR-USER/mediator`
+- [Fork this repository](https://github.com/mandlamag.github.io)
+- Clone it: `git clone https://github.com/yourusername`
 - Install the requried gems ([GitHub Pages](https://github.com/github/pages-gem), [Bourbon](https://github.com/thoughtbot/bourbon) and [Jekyll](https://github.com/jekyll/jekyll), [Jemoji](https://github.com/jekyll/jemoji)): `bundle install`
 - Run the jekyll server: `bundle exec jekyll serve`
 
@@ -72,7 +67,3 @@ Licensing
 ---------
 
 [MIT](https://github.com/dirkfabisch/mediator/blob/master/LICENCE) with no added caveats, so feel free to use this on your site without linking back to me or using a disclaimer or anything silly like that.
-
-Contact
--------
-I'd love to hear from you at [@dirkfabisch](https://twitter.com/dirkfabisch). Feel free to open issues if you run into trouble or have suggestions. Pull Requests always welcome.
