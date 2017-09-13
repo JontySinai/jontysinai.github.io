@@ -7,7 +7,6 @@ tags: featured
 image: /assets/article_images/2014-11-30-mediator_features/night-track.JPG
 image2: /assets/article_images/2014-11-30-mediator_features/night-track-mobile.JPG
 ---
-#Mediator Formats and CSS features
 
 >Segwit2x has garnered some controversy over the fact that it will not have replay protection. In this article, I’m going to explain what a replay attack is and how it will affect the upcoming 2x hard fork.
 
