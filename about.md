@@ -1,6 +1,12 @@
 ---
 layout: page
-title: Hello world, my name is Jonty
+title: Hello world, my name is Jonty.
 permalink: /about/
 ---
-Welcome to my blog. I'm currently studying mathematics at Cambridge University. I'm curious about the world, and am taking this journey one step at a time. Mathematics is something that I stumbled upon during university, and the more I learned, the more hooked I became. It is said that mathematics is the language of the universe, and I see it everywhere: patterns, colour, diversity, relationships, intelligence. I'm on this journey because I think I've found my True North, and that means believing in more. 
+Welcome to my blog. I'm currently studying mathematics at Cambridge University. I'm curious about the world, and am taking this journey one step at a time. Mathematics is something that I stumbled upon during university, and the more I learned, the more hooked I became. 
+
+
+It is said that mathematics is the language of the universe, and I see it everywhere: patterns, colour, diversity, relationships, intelligence. In some sense, the goal of mathematics is to develop this language of the universe and use it to understand the universe in its entirety. This has been done for the physical world since Ancient times. Today, however we are faced with the emergence of an exciting new paradigm in mathematics - an understanding of the abstract mind: from memory, to imagination to consciousness and intelligence in its entirety.  
+
+
+This to me is the most exciting journey to be on. I call it my True North, and it all started with the question: what do I believe in. 
