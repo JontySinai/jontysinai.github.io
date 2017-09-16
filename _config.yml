@@ -3,6 +3,9 @@ gems:
   - jemoji
   - jekyll-paginate
 
+# Use kramdown so that Mathjax can render
+markdown: kramdown
+
 # Site settings
 title: "Jonty Sinai"
 description: > # this means to ignore newlines until "email:"
