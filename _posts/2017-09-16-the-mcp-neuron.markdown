@@ -17,7 +17,7 @@ The success, however, of *deep learning* in image recognition, natural language 
 So what is deep learning? For the best explanation of deep learning and it's limits, I recommend this excellent [two-part post](https://blog.keras.io/the-limitations-of-deep-learning.html) by Francois Chollet, the creator of Keras. In summary, deep learning is a sequence of geometric transformations (linear and non-linear), that when applied to data, *may* be able to model the relationships contained in that data. These geometric transformations are organised in a layered network, known as a *neural network*. This series is about these so called artificial neural networks, in which I will attempt to uncover what they are, how they work, where they come and why they are called "neural networks".
 
 ## The MCP Neuron
-<br>
+<br/>
 
 Before there were any artificial neural networks, or even the perceptron (more on both in upcoming posts!), there was the MCP Neuron. First proposed in 1943 by the neurophysiologist Walter S. McCulloch and the logician Walter Pitts, the McCulloch-Pitts (MCP) neuron is a simple mathematical model of a biological *neuron*. 
 
@@ -42,27 +42,66 @@ At its most basic, a single biological neuron may receive multiple signals from 
 
 ***
 
-The idea behind the MCP neuron is to abstract the biological neuron described above into a simple mathematical model. The neuron receives incoming signals as \\(1\\)'s and \\(0\\)'s, takes a weighted sum of these signals and outputs a \\(1\\) if the weighted sum is greater than some threshold value or a \\(0\\) otherwise. Formally this mathematical model can be specified as follows:
+The idea behind the MCP neuron is to abstract the biological neuron described above into a simple mathematical model. The neuron receives incoming signals as \\(1\\)'s and \\(0\\)'s, takes a weighted sum of these signals and outputs a \\(1\\) if the weighted sum is at least some threshold value or a \\(0\\) otherwise. Formally this mathematical model can be specified as follows:
 
 
 
->* Let $[x_1, x_2, ... , x_m]$ be a vector of input signals where each \\(x_i\\) has a value of \\(1\\) or \\(0\\).
+>* Let \\([x_1, x_2, ... , x_m]\\) be a vector of input signals where each \\(x_i\\) has a value of \\(1\\) or \\(0\\).
 >* Let \\([w_1, w_2, ... , w_m]\\) be a vector of weights corresponding to the input signals where each \\(w_i\\) has a value of \\(1\\), \\(-1\\) or \\(0\\). 
     - Input signals with a weight of \\(1\\) are called *excitatory* since they contribute towards a positive output signal in the sum. 
     - Input signals with a weight of \\(-1\\) are called *inhibitory* since they contribute towards a null output signal in the sum. 
     - Input signals with a weight of \\(0\\) do not contribute at all to the neuron.
 >* Then for some threshold value \\(t\\), an integer, the output signal is determined by the following activation function:
 >
->$$
+>\\[
     y = \begin{cases}
         1, & \text{if} \ \sum_{i=1}^{m}w_{i}x_{i} \ \geq \ t, \\\
         0, & \text{otherwise}
     \end{cases}
-$$
+\\]
+>
+>* The neuron is said to be "activated" when the weighted sum is greater than the threshold value. 
 
 
-McCulloch's and Pitt's original experiment was to see if they could use this model to construct different [*logic gates*](http://www.ee.surrey.ac.uk/Projects/CAL/digital-logic/gatesfunc/) by simply specifying what the weights and threshold should be. In the next section, we'll see how MCP neurons can model certain logic gates in action using Python. 
+McCulloch's and Pitt's original experiment was to see if they could use this model to construct different [*logic gates*](http://www.ee.surrey.ac.uk/Projects/CAL/digital-logic/gatesfunc/) by simply specifying what the weights and threshold should be. In the next section, we'll go through the basic logic gates and show how the MCP neuron can model them. For a corresponding Python implementation of these examples in action, checkout the corresponding Jupyter notebook on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sec1-1_MCP_Neuron.ipynb).
 
+***
+
+### The OR Gate
+<br/>
+
+The first logic gate that we will go through is the OR gate. The OR gate indicates if there are **any** positive (as opposed to null) signals amongst the inputs. It will output a \\(1\\) if at least one of the input signals is a \\(1\\). For two input signals, the OR gate's truth table looks like this:
+
+
+[picture: OR Gate truth table]
+
+
+To reproduce the OR Gate using an MCP neuron, all of the weights should be \\(1\\), so that the neuron "considers" all inputs, and the threshold value should be \\(1\\), so that only one positive signal is required (at minimum) for the neuron to "activate". 
+
+### The AND Gate
+<br/>
+
+The next logic gate is the AND gate. The AND gate indicates if **all** of the inputs signals are positive. It will output \\(1\\) only if all of its input signals are \\(1\\). It's truth table looks this:
+
+
+[picture: AND Gate truth table]
+
+
+To reproduce the AND Gate using an MCP neuron, all of the weights should be \\(1\\), again so that the neuron considers all inputs, but the threshold value should be equal to the number of inputs (eg \\(2\\) for the example above), so that the neuron is activated only when all inputs are positive.
+
+### The NOT Gate
+<br/>
+
+So far we have seen logic gates which consider all inputs - i.e. their MCP neuron weights were all one. What about gates which ignore their inputs? This can be done using a NOT gate, which inverts the signal of its input, so that if the inputs is positive then the output will be null and vice-versa. In short, it *negates* its input signal. It's truth table is shown below:
+
+
+[picture: NOT Gate truth table]
+
+
+To specify a NOT Gate using an MCP neuron, set the input weights to \\(-1\\) and the threshold value to 0, so that the output is only ever positive when the input signal is null. 
+
+## Conclusion
+<br/>
 
 
 *This is the first post in a series dedicated to the history of Artificial Neural Networks. Special thanks go to [Sebastian Raschka](https://sebastianraschka.com) and [Andrey Kurenkov](http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/) for the inspiration, and to [Andrew Ng](https://www.coursera.org/specializations/deep-learning) for his passion and dedication to the field of Deep Learning. The style of this blogpost is intended to be conversational and informal. For a more formal treatment of the mathematics and code, checkout the Jupyter notebook version on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sec1-1_MCP_Neuron.ipynb).*
