@@ -5,6 +5,11 @@ gems:
 
 # Use kramdown so that Mathjax can render
 markdown: kramdown
+kramdown:
+  input: GFM
+
+# syntax highlightinh
+highlighter: rouge
 
 # Site settings
 title: "Jonty Sinai"
