@@ -46,85 +46,23 @@ The idea behind the MCP neuron is to abstract the biological neuron described ab
 
 
 
->* Let \\([x_1, x_2, ... , x_m]\\) be a vector of input signals where each \\(x_i\\) has a value of \\(1\\) or \\(0\\).
+>* Let $[x_1, x_2, ... , x_m]$ be a vector of input signals where each \\(x_i\\) has a value of \\(1\\) or \\(0\\).
 >* Let \\([w_1, w_2, ... , w_m]\\) be a vector of weights corresponding to the input signals where each \\(w_i\\) has a value of \\(1\\), \\(-1\\) or \\(0\\). 
     - Input signals with a weight of \\(1\\) are called *excitatory* since they contribute towards a positive output signal in the sum. 
     - Input signals with a weight of \\(-1\\) are called *inhibitory* since they contribute towards a null output signal in the sum. 
     - Input signals with a weight of \\(0\\) do not contribute at all to the neuron.
 >* Then for some threshold value \\(t\\), an integer, the output signal is determined by the following activation function:
 >
->\\[
+>$$
     y = \begin{cases}
         1, & \text{if} \ \sum_{i=1}^{m}w_{i}x_{i} \ \geq \ t, \\\
         0, & \text{otherwise}
     \end{cases}
-\\]
+$$
 
 
 McCulloch's and Pitt's original experiment was to see if they could use this model to construct different [*logic gates*](http://www.ee.surrey.ac.uk/Projects/CAL/digital-logic/gatesfunc/) by simply specifying what the weights and threshold should be. In the next section, we'll see how MCP neurons can model certain logic gates in action using Python. 
 
-## The MCP Neuron in Python
-<br>
-
-Let's begin by creating a simple class in Python to represent the MCP neuron. This class is completely determined by its weights and threshold value. The `TruthTable` method will allow us to easily pass a dataframe of signals (where each set of input signals is a row) to illustrate the different logic gates.
-
-```python
-import numpy as np
-import pandas as pd
-
-import numpy as np
-import pandas as pd
-
-class MCPNeuron(object):
-    """McCulloch-Pitts Neuron model
-    
-    Creates a logic gate using a set of weights and 
-    an activation threshold. 
-    
-    """
-    
-    def __init__(self, w = [1,1], t = 1):
-        self.w = np.array(w)
-        self.t = t
-        
-    
-    def decide(self, message):
-        """
-        Returns 1 if the weighted sum of the input signals,
-        passed as a message, exceeds the threshold value. 
-        
-        Returns 0, otherwise.
-        
-        """
-        
-        x = message # consistency with function notation above
-        sum_ = np.inner(self.w,x)
-        
-        if sum_ >= self.t:
-            return 1
-        else:
-            return 0
-        
-        
-    def TruthTable(self, in_signals, in_labels, out_label):
-        """
-        Generates a truth table (dataframe) of n messages
-        for a logic gate object constructed using the MCPNeuron 
-        class, where a message is a 1-D array of m signals.
-        
-        """
-        
-        table = pd.DataFrame(in_signals, columns = in_labels)
-        
-        out_signals = []
-        for row in in_signals:
-            signal = self.decide(message = row)
-            out_signals.append(signal)
-            
-        table[out_label] = pd.Series(out_signals)
-        return table
-        
-```
 
 
 *This is the first post in a series dedicated to the history of Artificial Neural Networks. Special thanks go to [Sebastian Raschka](https://sebastianraschka.com) and [Andrey Kurenkov](http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/) for the inspiration, and to [Andrew Ng](https://www.coursera.org/specializations/deep-learning) for his passion and dedication to the field of Deep Learning. The style of this blogpost is intended to be conversational and informal. For a more formal treatment of the mathematics and code, checkout the Jupyter notebook version on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sec1-1_MCP_Neuron.ipynb).*
