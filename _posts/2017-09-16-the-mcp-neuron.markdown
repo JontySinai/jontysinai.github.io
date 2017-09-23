@@ -8,7 +8,7 @@ image: /assets/article_images/2017-09-16-the-mcp-neuron/meddy-huduti-201619.JPG
 use_math : true
 ---
 
-Artificial intelligence is an incredibly exciting area of research and development which spans mathematics, statistics, computer science, engineering, philosophy, linguistics, information theory, biology, pyschology, neuroscience and others. It is also a fairly nascent area of science - what has been achieved so far is just the first steps in the journey to achieving *general artificial intelligence*. 
+Artificial intelligence is an incredibly exciting area of research and development which spans mathematics, statistics, computer science, engineering, philosophy, linguistics, information theory, biology, pyschology, neuroscience and others. It is also a fairly nascent area of science - what has been achieved so far are just the first steps in the journey to achieving *general artificial intelligence*. 
 
 
 The success, however, of *deep learning* in image recognition, natural language and games, has inspired the world to take note of artificial intelligence. This success has fueled a wave of media hype and attention, that has perhaps misinterpreted what AI *is* for what it *isn't*. AI as we know it today is not capable of thought, has no consciousness and certainly does not have any sort of intelligence that can surpass our own. Rather, the "AI" that we experience in our mobile phones, the internet or read about in the news, is a collection of computational techniques known as deep learning (or machine learning, depending on the scope). 
@@ -19,12 +19,12 @@ So what is deep learning? For the best explanation of deep learning and it's lim
 ## The MCP Neuron
 <br/>
 
-Before there were any artificial neural networks, or even the perceptron (more on both in upcoming posts!), there was the MCP Neuron. First proposed in 1943 by the neurophysiologist Walter S. McCulloch and the logician Walter Pitts, the McCulloch-Pitts (MCP) neuron is a simple mathematical model of a biological *neuron*. 
+Before there were any artificial neural networks, or even the perceptron (more on both in upcoming posts!), there was the MCP Neuron. First proposed in 1943 by the neurophysiologist Walter S. McCulloch and the logician Walter Pitts, the McCulloch-Pitts (MCP) neuron is a simple mathematical model of a *biological neuron*. 
 
 To understand how this model works, let's begin with a very simplified (and certainly non-expert) explanation of a biological neuron. These are electrically excitable, interconnected nerve cells in the brain which process and transmit information through electrical and chemical signals. These neurons are all connected with each other to form a neural network in the brain. The connections between neurons are known as *synapses*. Now a single neuron in this simplified explanation consists of three parts:
 
 
-* The cell body or soma: this is the main part of the neuron which processes signals.
+* Soma: this is the main part of the neuron which processes signals.
 * Dendrites: these are branch-like shapes which receive signals from other neurons.
 * Axon: this a single nerve which sends signals to other neurons.
 
@@ -51,7 +51,7 @@ The idea behind the MCP neuron is to abstract the biological neuron described ab
     - Input signals with a weight of \\(1\\) are called *excitatory* since they contribute towards a positive output signal in the sum. 
     - Input signals with a weight of \\(-1\\) are called *inhibitory* since they contribute towards a null output signal in the sum. 
     - Input signals with a weight of \\(0\\) do not contribute at all to the neuron.
->* Then for some threshold value \\(t\\), an integer, the output signal is determined by the following activation function:
+>* Then for some threshold value \\(t\\), an integer, the output signal is determined by the following *activation function*:
 >
 >\\[
     y = \begin{cases}
@@ -87,12 +87,12 @@ The next logic gate is the AND gate. The AND gate indicates if **all** of the in
 [picture: AND Gate truth table]
 
 
-To reproduce the AND Gate using an MCP neuron, all of the weights should be \\(1\\), again so that the neuron considers all inputs, but the threshold value should be equal to the number of inputs (eg \\(2\\) for the example above), so that the neuron is activated only when all inputs are positive.
+To reproduce the AND Gate using an MCP neuron, all of the weights should be \\(1\\), again so that the neuron considers all inputs, but the threshold value should be equal to the number of inputs (eg. \\(2\\) for the example above), so that the neuron is activated only when all inputs are positive.
 
 ### The NOT Gate
 <br/>
 
-So far we have seen logic gates which consider all inputs - i.e. their MCP neuron weights were all one. What about gates which ignore their inputs? This can be done using a NOT gate, which inverts the signal of its input, so that if the inputs is positive then the output will be null and vice-versa. In short, it *negates* its input signal. It's truth table is shown below:
+So far we have seen logic gates which consider all inputs - i.e. their MCP neuron weights were all \\(1\\). What about gates which ignore their inputs? This can be done using a NOT gate, which inverts the signal of its input, so that if the input is positive then the output will be null and vice-versa. In short, it **negates** its input signal. It's truth table is shown below:
 
 
 [picture: NOT Gate truth table]
@@ -103,6 +103,15 @@ To specify a NOT Gate using an MCP neuron, set the input weights to \\(-1\\) and
 ## Conclusion
 <br/>
 
+The MCP Neuron seems almost too simple to represent artificial intelligence of any kind, yet it is - and it isn't. Formal logic is a fundamental component of intelligence. For any machine to have artificial intelligence, it surely should be able to comprehend logic gates. The idea being that logic gates can be stringed together to form logic circuits, capable of executing any kind of instruction. This is indeed what underpins modern computational processors. However, we know that CPU's aren't really "intelligent" - they're just able to process any instruction given to them at lightning speed. 
+
+
+What makes the MCP Neuron different is the fact that it could reproduce logic gates using a *biologically inspired algorithm*. In the field of artificial intelligence, this was a promising achievement, since it almost surely makes sense that any kind of artificial intelligence should resemble the brain - which is after all the great stage of human intelligence.
+
+
+The problem with the MCP Neuron is that every logic gate which it could model (and hence every logic circuit which a collection of neurons could model) had to be pre-programmed, something which is clear in the Jupyter notebook accompanying this post. This stands out as a massive contrast to the brain, which learns from experience. Nonetheless, it would take another 15 years before Frank Rosenblatt's landmark debut of the *Perceptron* - the first *learning algorithm* of its kind. That the perceptron - and hence artificial neural networks - is a direct extension of the MCP Neuron, is what makes the MCP Neuron a cornerstone of artificial intelligence, and thus the beginning of our journey. 
+
+***
 
 *This is the first post in a series dedicated to the history of Artificial Neural Networks. Special thanks go to [Sebastian Raschka](https://sebastianraschka.com) and [Andrey Kurenkov](http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/) for the inspiration, and to [Andrew Ng](https://www.coursera.org/specializations/deep-learning) for his passion and dedication to the field of Deep Learning. The style of this blogpost is intended to be conversational and informal. For a more formal treatment of the mathematics and code, checkout the Jupyter notebook version on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sec1-1_MCP_Neuron.ipynb).*
 
