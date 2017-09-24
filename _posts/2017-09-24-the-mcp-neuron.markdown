@@ -4,7 +4,7 @@ title:  "The MCP Neuron"
 date:   2017-09-16
 categories: jekyll update
 tags: ['featured', 'neural networks', 'ai', 'machine learning', 'deep learning']
-image: /assets/article_images/2017-09-16-the-mcp-neuron/meddy-huduti-201619.JPG
+image: /assets/article_images/2017-09-24-the-mcp-neuron/meddy-huduti-201619.JPG
 use_math : true
 ---
 
@@ -32,13 +32,10 @@ To understand how this model works, let's begin with a very simplified (and cert
 The picture looks something like this: 
 
 
-[picture here: biological neuron]
+![](/assets/article_images/2017-09-24-the-mcp-neuron/neuron.png)
 
 
 At its most basic, a single biological neuron may receive multiple signals from other neurons via its dendrites. These signals are then combined in the soma, and this combination *may* fire off another signal from the neuron to other neurons, which is propagated via the axon.
-
-
-[picture here: a neuron sending and receiving signals]
 
 ***
 
@@ -63,6 +60,10 @@ The idea behind the MCP neuron is to abstract the biological neuron described ab
 >* The neuron is said to be "activated" when the weighted sum is greater than the threshold value. 
 
 
+The MCP Neuron is illustrated below. Note that the \\(x_i\\) input signals are analogous to the *dendrites*, the activation function is analogous to the *soma* and the output is analogous to the *axon*.
+
+![](/assets/article_images/2017-09-24-the-mcp-neuron/MCP-neuron.png)
+
 McCulloch's and Pitt's original experiment was to see if they could use this model to construct different [*logic gates*](http://www.ee.surrey.ac.uk/Projects/CAL/digital-logic/gatesfunc/) by simply specifying what the weights and threshold should be. In the next section, we'll go through the basic logic gates and show how the MCP neuron can model them. For a corresponding Python implementation of these examples in action, checkout the corresponding Jupyter notebook on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sec1-1_MCP_Neuron.ipynb).
 
 ***
@@ -73,7 +74,7 @@ McCulloch's and Pitt's original experiment was to see if they could use this mod
 The first logic gate that we will go through is the OR gate. The OR gate indicates if there are **any** positive (as opposed to null) signals amongst the inputs. It will output a \\(1\\) if at least one of the input signals is a \\(1\\). For two input signals, the OR gate's truth table looks like this:
 
 
-[picture: OR Gate truth table]
+![](/assets/article_images/2017-09-24-the-mcp-neuron/OR-gate.png)
 
 
 To reproduce the OR Gate using an MCP neuron, all of the weights should be \\(1\\), so that the neuron "considers" all inputs, and the threshold value should be \\(1\\), so that only one positive signal is required (at minimum) for the neuron to "activate". 
@@ -84,7 +85,7 @@ To reproduce the OR Gate using an MCP neuron, all of the weights should be \\(1\
 The next logic gate is the AND gate. The AND gate indicates if **all** of the inputs signals are positive. It will output \\(1\\) only if all of its input signals are \\(1\\). It's truth table looks this:
 
 
-[picture: AND Gate truth table]
+![](/assets/article_images/2017-09-24-the-mcp-neuron/AND-gate.png)
 
 
 To reproduce the AND Gate using an MCP neuron, all of the weights should be \\(1\\), again so that the neuron considers all inputs, but the threshold value should be equal to the number of inputs (eg. \\(2\\) for the example above), so that the neuron is activated only when all inputs are positive.
@@ -95,7 +96,7 @@ To reproduce the AND Gate using an MCP neuron, all of the weights should be \\(1
 So far we have seen logic gates which consider all inputs - i.e. their MCP neuron weights were all \\(1\\). What about gates which ignore their inputs? This can be done using a NOT gate, which inverts the signal of its input, so that if the input is positive then the output will be null and vice-versa. In short, it **negates** its input signal. It's truth table is shown below:
 
 
-[picture: NOT Gate truth table]
+![](/assets/article_images/2017-09-24-the-mcp-neuron/NOT-gate.png)
 
 
 To specify a NOT Gate using an MCP neuron, set the input weights to \\(-1\\) and the threshold value to 0, so that the output is only ever positive when the input signal is null. 
