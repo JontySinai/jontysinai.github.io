@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "The MCP Neuron"
-date:   2017-09-16
+date:   2017-09-24
 categories: jekyll update
 tags: ['featured', 'neural networks', 'ai', 'machine learning', 'deep learning']
 image: /assets/article_images/2017-09-24-the-mcp-neuron/meddy-huduti-201619.JPG
