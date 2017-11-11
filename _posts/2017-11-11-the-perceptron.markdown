@@ -69,7 +69,7 @@ We will now make this more concrete by looking at the Perceptron learning algori
 ## The Perceptron
 <br/>
 
-The Perceptron algorithms works by comparing the true label, \\(y_n\\), with the predicted label, \\(\hat{y_n}\\), for **every** training example, and then updating the weights according to whether or not the weights are too small or too large. 
+The Perceptron algorithm works by comparing the true label, \\(y_n\\), with the predicted label, \\(\hat{y_n}\\), for **every** training example, and then updating the weights according to whether or not the weights are too small or too large. 
 
 How do we measure this comparison? Since the labels are either \\(1\\) or \\(-1\\), one intuitive way is to note that the sum of the predicted label and the true label is \\(0\\) when the label is predicted correctly, and \\(\pm2\\), when the label is predicted incorrectly:
 
@@ -95,7 +95,7 @@ For a visual explanation of why the update rule works, consider the simple 2D ca
 
 [Picture: example (see AP book 1 for a rough illustration)]
 
- In this scenario, the training example, \\(\mathbf{x^*} = [2, 0]\\), \\(y^* = -1}\\), lies on the wrong side of the decision boundery, and indeed, \\(\mathbf{w}^{T}\mathbf{x}^* = 2 > 0\\), so \\(\hat{y^*} = 1\\). Then the update is:
+ In this scenario, the training example, \\(\mathbf{x^* } = [2, 0]\\), \\(y^* = -1}\\), lies on the wrong side of the decision boundery, and indeed, \\(\mathbf{w}^{T}\mathbf{x}^* = 2 > 0\\), so \\(\hat{y^*} = 1\\). Then the update is:
 
 \\[\begin{align}
 \mathbf{w} & = \mathbf{w} - \alpha\big(y^* - \hat{y^* }\big)\mathbf{x}^* \\\
