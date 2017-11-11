@@ -11,10 +11,10 @@ use_math : true
 Artificial intelligence is an incredibly exciting area of research and development which spans mathematics, statistics, computer science, engineering, philosophy, linguistics, information theory, biology, pyschology, neuroscience and others. It is also a fairly nascent area of science - what has been achieved so far are just the first steps in the journey to achieving *general artificial intelligence*. 
 
 
-The success, however, of *deep learning* in image recognition, natural language and games, has inspired the world to take note of artificial intelligence. This success has fueled a wave of media hype and attention, that has perhaps misinterpreted what AI *is* for what it *isn't*. AI as we know it today is not capable of thought, has no consciousness and certainly does not have any sort of intelligence that can surpass our own. Rather, the "AI" that we experience in our mobile phones, the internet or read about in the news, is a collection of computational techniques known as deep learning (or machine learning, depending on the scope). 
+The success, however, of *deep learning* in image recognition, natural language and games, has inspired the world to take note of artificial intelligence. This success has fueled a wave of media hype and attention, that has perhaps misinterpreted what AI *is* for what it *isn't*. AI as we know it today is not capable of thought, has no consciousness and certainly does not have any sort of intelligence that can surpass our own. Rather, the "AI" that we experience in our mobile phones, the internet or read about in the news, is a collection of computational and statistical techniques known as deep learning (or machine learning, depending on the scope). 
 
 
-So what is deep learning? For the best explanation of deep learning and it's limits, I recommend this excellent [two-part post](https://blog.keras.io/the-limitations-of-deep-learning.html) by Francois Chollet, the creator of Keras. In summary, deep learning is a sequence of geometric transformations (linear and non-linear), that when applied to data, *may* be able to model the relationships contained in that data. These geometric transformations are organised in a layered network, known as a *neural network*. This series is about these so called artificial neural networks, in which I will attempt to uncover what they are, how they work, where they come and why they are called "neural networks".
+So what is deep learning? For the best explanation of deep learning and it's limits, I recommend this excellent [two-part post](https://blog.keras.io/the-limitations-of-deep-learning.html) by Francois Chollet, the creator of Keras. In summary, deep learning is a sequence of geometric transformations (linear and non-linear), that when applied to data, *may* be able to statistically model the relationships contained in that data. These geometric transformations are organised in a layered network, known as a *neural network*. This series is about these so called artificial neural networks, in which I will attempt to uncover what they are, how they work, where they come and why they are called "neural networks".
 
 ## The MCP Neuron
 <br/>
@@ -46,7 +46,7 @@ The idea behind the MCP neuron is to abstract the biological neuron described ab
 >* Let \\([x_1, x_2, ... , x_m]\\) be a vector of input signals where each \\(x_i\\) has a value of \\(1\\) or \\(0\\).
 >* Let \\([w_1, w_2, ... , w_m]\\) be a vector of weights corresponding to the input signals where each \\(w_i\\) has a value of \\(1\\), \\(-1\\) or \\(0\\). 
     - Input signals with a weight of \\(1\\) are called *excitatory* since they contribute towards a positive output signal in the sum. 
-    - Input signals with a weight of \\(-1\\) are called *inhibitory* since they contribute towards a null output signal in the sum. 
+    - Input signals with a weight of \\(-1\\) are called *inhibitory* since they repress a positive output signal in the sum. 
     - Input signals with a weight of \\(0\\) do not contribute at all to the neuron.
 >* Then for some threshold value \\(t\\), an integer, the output signal is determined by the following *activation function*:
 >
