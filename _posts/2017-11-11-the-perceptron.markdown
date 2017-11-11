@@ -95,13 +95,12 @@ For a visual explanation of why the update rule works, consider the simple 2D ca
 
 [Picture: example (see AP book 1 for a rough illustration)]
 
- In this scenario, the training example, \\(\mathbf{x^* } = [2, 0]\\), \\(y^* = -1}\\), lies on the wrong side of the decision boundery, and indeed, \\(\mathbf{w}^{T}\mathbf{x}^* = 2 > 0\\), so \\(\hat{y^*} = 1\\). Then the update is:
+ In this scenario, the training example, \\(\mathbf{x^* } = [2, 0]\\), \\(y^* = -1\\), lies on the wrong side of the decision boundery, and indeed, \\(\mathbf{w}^{T}\mathbf{x}^* = 2 > 0\\), so \\(\hat{y^*} = 1\\). Then the update is:
 
 \\[\begin{align}
 \mathbf{w} & = \mathbf{w} - \alpha\big(y^* - \hat{y^* }\big)\mathbf{x}^* \\\
- & = [1,0] - 0.5\big(-2\big)[2,0] \\\
- & = [1,0] - 0.5[-4,0] \\\ 
- & = [3, 0]
+ & = \begin{bmatrix}1 \\\ 0\end{bmatrix} - 0.5\big(-2\big)\begin{bmatrix}4 \\\ 0\end{bmatrix} \\\
+ & = \begin{bmatrix}3 \\\ 0\end{bmatrix}
 \end{align}\\]
 
 And we can see that with the new decision boundery, the Perceptron manages to classify all examples correctly. 
