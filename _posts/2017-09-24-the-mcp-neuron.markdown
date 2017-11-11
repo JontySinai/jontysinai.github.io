@@ -3,7 +3,7 @@ layout: post
 title:  "The MCP Neuron"
 date:   2017-09-24
 categories: jekyll update
-tags: ['featured', 'neural networks', 'ai', 'machine learning', 'deep learning']
+tags: ['neural networks', 'ai', 'machine learning', 'deep learning']
 image: /assets/article_images/2017-09-24-the-mcp-neuron/meddy-huduti-201619.JPG
 use_math : true
 ---
@@ -110,7 +110,7 @@ The MCP Neuron seems almost too simple to represent artificial intelligence of a
 What makes the MCP Neuron different is the fact that it could reproduce logic gates using a *biologically inspired algorithm*. In the field of artificial intelligence, this was a promising achievement, since it almost surely makes sense that any kind of artificial intelligence should resemble the brain - which is after all the great stage of human intelligence.
 
 
-The problem with the MCP Neuron is that every logic gate which it could model (and hence every logic circuit which a collection of neurons could model) had to be pre-programmed, something which is clear in the Jupyter notebook accompanying this post. This stands out as a massive contrast to the brain, which learns from experience. Nonetheless, it would take another 15 years before Frank Rosenblatt's landmark debut of the *Perceptron* - the first *learning algorithm* of its kind. That the perceptron - and hence artificial neural networks - is a direct extension of the MCP Neuron, is what makes the MCP Neuron a cornerstone of artificial intelligence, and thus the beginning of our journey. 
+The problem with the MCP Neuron is that every logic gate which it could model (and hence every logic circuit which a collection of neurons could model) had to be pre-programmed, something which is clear in the Jupyter notebook accompanying this post. This stands out as a massive contrast to the brain, which learns from experience. Nonetheless, it would take another 14 years before Frank Rosenblatt's landmark debut of the *Perceptron* - the first *learning algorithm* of its kind. That the perceptron - and hence artificial neural networks - is a direct extension of the MCP Neuron, is what makes the MCP Neuron a cornerstone of artificial intelligence, and thus the beginning of our journey. 
 
 ***
 
