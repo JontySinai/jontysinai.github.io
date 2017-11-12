@@ -10,7 +10,7 @@ use_math : true
 
 *This is the second post in a series dedicated to the history of Artificial Neural Networks. Read the first post on the MCP Neuron [here](https://jontysinai.github.io/jekyll/update/2017/09/24/the-mcp-neuron.html).*
 
-In my last post, I introduced the MCP Neuron, the first biologically inspired algorithm. The MCP Neuron was significant as it could model logical gates - in particular AND, OR and NOT - using an algorithm based loosely on the neurons found in the brain. 
+In my last post, I introduced the MCP Neuron, the first biologically inspired algorithm. The MCP Neuron was a significant first step in artificial intelligence as it could model the AND, OR and NOT logic gates using an algorithm inspired directly by the neurons found in the brain. This post is about the Perceptron, a natural evolution of the MCP Neuron, which incorporated an early version of a *learning algorithm*.
 
 As a reminder, neurons in the brain are connected to each other to form a neural network. In this network, a single biological neuron can receive signals from other neurons. If the combined *intensity* of these signals is sufficient, the neuron will fire off another signal to other neurons in the network. 
 
@@ -28,7 +28,7 @@ The MCP Neuron modelled this dynamic by summing a vector of *input signals*, \\(
 
 As an example, to model the AND gate for two input signals, we set the weights to \\([1,1]\\) and the threshold value to \\(2\\) so that all input signals must be \\(1\\) for a the neuron to fire a positive output. 
 
-However, the problem with the MCP Neuron is that the weights had to be *pre-programmed* for each logic gate. Furthermore, its limited use of integers restricted the model to basic logic gates. This problem would be solved in 1957, when the psychologist Frank Rosenblatt extended the MCP Neuron to include a *learning algorithm* which could automatically figure out the correct weights. He called this model the Perceptron.
+However, the problem with the MCP Neuron is that the weights had to be *pre-programmed* for each logic gate. Furthermore, its limited use of integers restricted the model to basic logic gates. This problem would be solved in 1957, when the psychologist Frank Rosenblatt extended the MCP Neuron to include a learning algorithm which could automatically figure out the correct weights. He called this model the Perceptron.
 
 ## Learning Algorithms: A Brief Primer
 <br/>
@@ -84,26 +84,42 @@ How do we measure this comparison? Since the labels are either \\(1\\) or \\(-1\
 Since the value for \\(\hat{y_n}\\), depends on how large (positive) or small (negative) the weights vector is, we need to reduce \\(\mathbf{w}\\) when it is too large and increase it when it is too small. Using the cases above, this motivates the update rule:
 
 > \\[
-\mathbf{w} = \mathbf{w} - \alpha(y_n - \hat{y_n})\mathbf{x_n}    
+\mathbf{w} = \mathbf{w} + \alpha(y_n - \hat{y_n})\mathbf{x_n}    
 \\]
 
-The parameter, \\(\alpha\\) is called the *learning rate*, which as the name suggests can be used to tune how quickly or slowly \\(\mathbf{w}\\) is updated. Notice that the weight update is proportional on the value of \\(\mathbf{x_n}\\), which ensures that we move the decision boundary to a lesser degree when \\(\mathbf{w}^{T}\mathbf{x}\\) is closer to zero.
+There are three important factors in this update rule:
+
+* The parameter, \\(\alpha > 0\\), is called the *learning rate*, which as the name suggests can be used to tune how quickly or slowly \\(\mathbf{w}\\) is updated.
+* The difference \\((y_n - \hat{y_n})\\) will increase the weights by a factor of \\(2\\) when we misclassify a positive example, and decrease the weights by a factor of \\(-2\\) when we misclassify a negative example.
+* Finally, notice that the weight update is proportional on the value of \\(\mathbf{x_n}\\), which ensures that we move the decision boundary to a lesser degree when \\(\mathbf{w}^{T}\mathbf{x}\\) is closer to zero.
 
 ***
 
-For a visual explanation of why the update rule works, consider the simple 2D case given below, with initial weights vector \\(\mathbf{w} = [1, 0]\\) and learning rate \\(\alpha = 0.5\\), and only one misclassified example.
+For a visual explanation of why the update rule works, consider the simple 2D case given below, with initial weights vector \\(\mathbf{w} = [1, 1]\\) and learning rate \\(\alpha = 0.2\\), and only one misclassified example.
 
 [Picture: example (see AP book 1 for a rough illustration)]
 
- In this scenario, the training example, \\(\mathbf{x^* } = [2, 0]\\), \\(y^* = -1\\), lies on the wrong side of the decision boundery, and indeed, \\(\mathbf{w}^{T}\mathbf{x}^* = 2 > 0\\), so \\(\hat{y^*} = 1\\). Then the update is:
+ In this scenario, the training example, \\(\mathbf{x^* } = [-1, 2]\\), \\(y^* = -1\\), lies on the wrong side of the decision boundery, and indeed, \\(\mathbf{w}^{T}\mathbf{x}^* = 1 > 0\\), so \\(\hat{y^*} = 1\\). Then the update is:
 
 \\[\begin{align}
 \mathbf{w} & = \mathbf{w} - \alpha\big(y^* - \hat{y^* }\big)\mathbf{x}^* \\\
- & = \begin{bmatrix}1 \\\ 0\end{bmatrix} - 0.5\big(-2\big)\begin{bmatrix}4 \\\ 0\end{bmatrix} \\\
- & = \begin{bmatrix}3 \\\ 0\end{bmatrix}
+ & = \begin{bmatrix}1 \\\ 1\end{bmatrix} - 0.2\big(-2\big)\begin{bmatrix}-1 \\\ 2\end{bmatrix} \\\
+ & = \begin{bmatrix}1,4 \\\ 0,2\end{bmatrix}
 \end{align}\\]
 
-And we can see that with the new decision boundery, the Perceptron manages to classify all examples correctly. 
+With the new decision boundery, \\(\mathbf{w}^{T}\mathbf{x}^* = -1 < 0\\), so \\(\hat{y^*} = -1\\), as required.
+
+## The Learning Rate
+<br/>
+
+In the example above, the learning rate \\(\alpha = 0.2\\) was chosen so that the Perceptron correctly classified \\(\mathbf{x^* }\\) after just one update. To get an understanding of how this parameter affects convergence of the learning algorithm, we can look at what happens when we choose other values for the learning rate:
+
+* If we set \\(\alpha = 0.05\\), then the updated weights vector would be \\([1.1 ,0.8]\\). The decision boundery is only rotated by a small amount, and thus the point \\(\mathbf{x^* } = [-1,2]\\) is still misclassified. 
+* If we set \\(\alpha = 0,5\\), the updated weights vector is now \\([2,-1]\\). The decision boundery has rotated by such a large amount, that although it correctly classifies \\(\mathbf{x^* }\\), it incorrectly classifies other points.
+
+[Picture: learning rate too small + learning rate too large]
+
+ If the learning rate is too small, the learning algorithm may fail to converge in a reasonable amount of time. If the learning rate is too large, the learning algorithm may fail to settle on a good decision boundery at all! Thus we can see that the learning rate, \\(\alpha\\), is an important parameter in the learning algorithm, and is vital to the success of the Perceptron.
 
 ***
 
