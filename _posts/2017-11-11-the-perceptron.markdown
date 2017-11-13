@@ -8,7 +8,7 @@ image: /assets/article_images/2017-11-11-the-perceptron/len-dela-cruz-6832.jpg
 use_math : true
 ---
 
-*This is the second post in a series dedicated to the history of Artificial Neural Networks. Read the first post on the MCP Neuron [here](https://jontysinai.github.io/jekyll/update/2017/09/24/the-mcp-neuron.html).*
+*This is the second post in a series dedicated to the history of Artificial Neural Networks. Read the first post on the MCP Neuron [here](https://jontysinai.github.io/jekyll/update/2017/09/24/the-mcp-neuron.html). For an accompanying Jupyter notebook with a Python implementation of the Perceptron, go [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sect1-2_Perceptron.ipynb)*
 
 In my last post, I introduced the MCP Neuron, the first biologically inspired algorithm. The MCP Neuron was a significant first step in artificial intelligence as it could model the AND, OR and NOT logic gates using an algorithm inspired directly by the neurons found in the brain. This post is about the Perceptron, a natural evolution of the MCP Neuron, which incorporated an early version of a *learning algorithm*.
 
@@ -152,7 +152,7 @@ However, as we shall explore in the next post, artificial intelligence was far f
 
 ***
 
-*Special thanks go to [Sebastian Raschka](https://sebastianraschka.com) and [Andrey Kurenkov](http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/) for the inspiration, and to [Andrew Ng](https://www.coursera.org/specializations/deep-learning) for his passion and dedication to the field of Deep Learning. The style of this blogpost is intended to be conversational and informal. For a more formal treatment of the mathematics and code, checkout the Jupyter notebook version on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sec1-1_MCP_Neuron.ipynb).*
+*Special thanks go to [Sebastian Raschka](https://sebastianraschka.com) and [Andrey Kurenkov](http://www.andreykurenkov.com/writing/a-brief-history-of-neural-nets-and-deep-learning/) for the inspiration, and to [Andrew Ng](https://www.coursera.org/specializations/deep-learning) for his passion and dedication to the field of Deep Learning. The style of this blogpost is intended to be conversational and informal. For a more formal treatment of the mathematics and code, checkout the Jupyter notebook version on Github [here](https://github.com/JontySinai/PythonAI/blob/master/Notebooks/Sect1-2_Perceptron.ipynb).*
 
 
 *Photo by Len dela Cruz on Unsplash*
