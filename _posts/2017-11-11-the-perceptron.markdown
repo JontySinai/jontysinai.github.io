@@ -143,6 +143,7 @@ However, the Perceptron suffered from two things:
 
 * It could only fit simple, linear decision boundaries.
 * Its learning capabilities were notoriously oversold by Rosenblatt, with the New York Times reporting that it was 
+
 > "the embryo of an electronic computer that [the Navy] expects will be able to walk, talk, see, write, reproduce itself and be conscious of its existence."
 
 The first weakness (at least) meant that it wasn't long before the Perceptron was shown to be incapable of recognising simple non-linear patterns. Ultimately the Perceptron met its demise at the hands of the revered computer scientists Marvin Minksy and Seymour Papert in their infamous book, titled *Perceptrons* and released in 1969. It is believed that the criticism of Perceptrons in this book, and their extension to neural networks (explored in the next post) contributed to the so-called *AI Winter* - a period of reduced funding and activity in artificial intelligence researched that spanned the 1970's, 1980's and 1990's. 
