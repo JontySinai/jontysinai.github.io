@@ -71,7 +71,7 @@ We will now make this more concrete by looking at the Perceptron learning algori
 
 The Perceptron algorithm works by comparing the true label, \\(y_n\\), with the predicted label, \\(\hat{y_n}\\), for **every** training example, and then updating the weights according to whether or not the weights are too small or too large. 
 
-How do we measure this comparison? Since the labels are either \\(1\\) or \\(-1\\), one intuitive way is to note that the sum of the predicted label and the true label is \\(0\\) when the label is predicted correctly, and \\(\pm2\\), when the label is predicted incorrectly:
+How do we measure this comparison? Since the labels are either \\(1\\) or \\(-1\\), one intuitive way is to note that the difference of the predicted label and the true label is \\(0\\) when the label is predicted correctly, and \\(\pm2\\), when the label is predicted incorrectly:
 
 > \\[
     y_{n} - \hat{y_n} = \begin{cases}
