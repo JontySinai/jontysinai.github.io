@@ -15,20 +15,22 @@ use_math : true
 
 If you're reading this post, then at some point you've encountered chance. Chance is intertwined with nature, just as the planets revolve around the sun. But unlike the laws of motion of the universe, chance is uncertain. Every time you've played a game involving the roll of dice, or forgot to check the weather before stepping outside, or clicked next on your Spotify playlist, you've taken a bet against chance, without knowing with certainty what hand the universe will play. 
 
-Chance, as we know it, is the possibility that something will happen - say that you roll 6 or that the sun will be shining on your way home\*. Probability is the measure of the likelihood that something will happen - i.e. the probability that you roll a 6 is 1 in 6 (assuming of course that the dice is as you would expect). 
+Chance, as we know it, is the possibility that something will happen - say that you roll 6 or that the sun will be shining on your way home\*. Probability is the measure of the *likelihood* that something will happen - i.e. the probability that you roll a 6 is 1 in 6 (assuming of course that the dice is as you would expect). 
 
-In everyday terms, probability is our best guess at trying to predict what nature, and let's face it, what humanity has in store. For example, you might be wondering what the probability is that you will have three glorious looking donuts, coated in sprinkles (like the ones above) this evening. More so,
+In everyday terms, probability is our best guess at trying to predict what nature, and let's face it, what humanity has in store. For example, you might be wondering what the probability is that today you will have three glorious looking donuts, coated in sprinkles (like the ones above).
 
-> probability theory is our attempt to measure uncertainty in the universe.
+> Probability theory is our attempt to measure uncertainty in the universe.
 
 \* <small> This is a perfect example of how the universe plays its hand. When I started this post this morning, the sun was shining as bright as can be. The whole day was like this, except on my way home when lo and behold a runaway cloud let loose. Unexpected! <small/>
 
 # Measuring the Universe
 <br/>
 
-Mathematical studies of chance and probability date back to the 16th century Italy and France, where the Renaissance mathematicians Geralamo Cardano, Pierre de Fermat and Blaise Pascal were mostly concerned with calculating their odds of winning games of dice. However, the modern theory of probability as we know it, was advanced during the 20th century following the development of *measure theory*. 
+Mathematical studies of chance and probability date back to 16th century Italy and France. During this time, the Renaissance mathematicians Geralamo Cardano, Pierre de Fermat and Blaise Pascal were mostly concerned with calculating their odds of winning games of dice. However, the modern theory of probability as we know it, was advanced during the 20th century following the development of *measure theory*. 
 
-The goal of measure theory was to construct a systematic method in which to compare the relative sizes of sets in mathematics. Since the probability of an event occuring is precisely a *measure of the likelihood* of that event occuring, measure theory became a natural framework for studying probability. The problem with measure theory (for our purposes) is that it becomes gloriously abstract very quickly. Nonetheless, I will try and introduce the mathematical framework under which probability is studied, without going to deep into the measure theory. Let's see how far we can get:
+The goal of measure theory was to construct a systematic method in which to compare the relative sizes of sets in mathematics. Since the probability of an event occuring is precisely a *measure of the likelihood* of that event occuring, measure theory became a natural framework for studying probability. 
+
+The problem with measure theory (for our purposes) is that it becomes gloriously abstract very quickly. Nonetheless, I will try and introduce the mathematical framework under which probability is studied, without going too deep into the measure theory. Let's see how far we can get.
 
 ### A Motivating Example
 <br/>
@@ -45,7 +47,7 @@ We would like to consider the set of all such possible combinations of dice thro
 \Omega = \big\\{(i,j): 1\leq i,j \leq6\big\\}
 \\]
 
-> The pair \\((3,6)\\) is then a member of \\(\Omega\\), which we write: \\((3,6) \in \Omega\\). 
+> The pair \\((3,6)\\) is then a member of \\(\ \Omega\\), which we write: \\((3,6) \in \Omega\\). 
 
 However, if we consider the event that a given dice throw sums to \\(9\\), then we can see that there is more than one possible combination, i.e. the pairs:
 
@@ -87,12 +89,12 @@ and taking \\(A\\) as above:
 Equipped with a set of outcomes, \\(\Omega\\), a family of events, \\(\mathscr{F}\\) and a measure of probability, \\(\mathbb{P}\\), we have almost everything we need to lay out the foundamental ideas of probability theory. The missing ingredient is the function we defined at the beginning of this section: \\(X\\). This function is a tricky object and handling it requires some care. In other words a bit more math, which we will cover shortly. For now, I will claim that we can use \\(X\\) to *encode the randomness* of the example game.
 
 \* <small> Technically \\(\mathscr{F}\\) is what we call a *\\(\sigma\\)-algebra* on \\(\\Omega\\).
-<small/``>
+<small/>
 
 ## The Setting
 <br/>
 
-The motivating example has given enough to set the scence more generally. In summary:
+The motivating example has given us enough material to set the scene more generally.
 
 The triple \\(\big(\Omega, \mathscr{F}, \mathbb{P}\big)\\) is known as a **probability space** if \\(\ \mathbb{P}(\Omega) = 1\\). In which case the map which sends elements of \\(\mathscr{F}\\) to numbers in the interval \\([0,1]\\),
 
@@ -100,11 +102,15 @@ The triple \\(\big(\Omega, \mathscr{F}, \mathbb{P}\big)\\) is known as a **proba
 \mathbb{P}:\mathscr{F} \to [0,1]    
 \\]
 
-is known as a *probability measure*.
+is known as a *probability measure*. 
 
-The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements \\(\omega \in \Omega\\) (equivalently \\(\\{\omega\\} \in \mathscr{F}\\)) are called **elementary events** (or **realisations**).
+> The requirement that \\(\ \mathbb{P}(\Omega) = 1\\) reflects the logic that in the world of \\(\big(\Omega, \mathscr{F}, \mathbb{P}\big)\\) something has got to happen from \\(\Omega\\).
 
-The next step is define the notion of a *random variable*. Our intuition says that this must be some kind of variable that takes its values at random. Mathematically, this isn't as obvious to define. We'll proceed by getting the construction out of the way, then relating it back to our intuition.
+The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements \\(\omega \in \Omega\\) (equivalently \\(\\{\omega\\} \in \mathscr{F}\\)) are called **elementary events** (or **realisations**). 
+
+> Events in \\(\mathscr{F}\\) are made up of elementary events (or the lack thereof, e.g. the event that you **don't** roll two 6's).
+
+The next step is to define the notion of a *random variable*. Our intuition says that this must be some kind of variable that takes its values at random. Mathematically, this isn't as obvious to define. We'll proceed by getting the construction out of the way, then relating it back to our intuition.
 
 Let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary events from \\(\Omega\\) to the *real line* (i.e. the dense numbers as we know them). Then the function \\(X\\) will be a **random variable** if the *inverse image* of any subset \\(B \subset \mathbb{R}\\) (the symbol \\(\subset\\) is used to indicate that \\(B\\) is a subset of \\(\mathbb{R}\\)) is contained in \\(\mathscr{F}\\). 
 
@@ -112,7 +118,7 @@ Let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary event
 > \\[
 X^{-1}(B) = \\{\omega \in \Omega : X(\omega) \subset B\\}
 \\]
-> where \\(B\\) contains real numbers from \\(\mathbb{R}\\).
+> where \\(B \subset \mathbb{R}\\).
 
 ***
 
@@ -128,14 +134,14 @@ X^{-1}\big(\\{9\\}\big) & = \big\\{(i,j) \in \Omega : X\big((i,j)\big) = 9\big\\
 We know that \\(A \in \mathscr{F}\\). So far, so good. In fact, since we include the empty set, \\(\emptyset\\), as part of \\(\mathscr{F}\\), it turns out that the inverse image of *any* subset of \\(\mathbb{R}\\) is in \\(\mathscr{F}\\). So \\(X\\) satisfies the condition\* for it to be a random variable.
 
 
-\* <small>In reality this condition is a technical requirement which we don't have to worry about in most (computational) settings. Rather we will be more concerned if the setting we use makes sense.<small/>
+\* <small>In reality this condition is a technical requirement which we don't have to worry about in most (computational) settings. Rather we will be more concerned if the setting we end up using makes sense.<small/>
 
 ## Random Variables and Randomness
 <br/>
 
 The condition that \\(X:\Omega \to \mathbb{R}\\) is a **random variable** if \\(X^{-1}(B) \in \mathscr{F}\\) for any subset \\(B \subset \mathbb{R}\\) of real numbers, can be interpreted in the following way:
 
-> If we make some observation, \\(B\\), which is *quantifiable* in \\(\mathbb{R}\\), then \\(X^{-1}(B)\\) tells us the **mechanism which generated \\(B\\)**. In other words, the **chance** of \\(B\\) happening as governed by the randomness of \\(X\\).
+> If we make some observation, \\(B\\), which is *quantifiable* in \\(\mathbb{R}\\), then \\(X^{-1}(B)\\) tells us the **mechanism which generated \\(B\\)**. In other words, the **chance** of \\(B\\) happening as governed by the **randomness** of \\(X\\).
 
 In fact, we can *measure* the likelihood of \\(B\\) happening by taking the following:
 
