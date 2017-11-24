@@ -165,7 +165,7 @@ However, the set containment symbol looks a little unwieldy and is just there fo
 
 > This simply reads as the **probability that \\(X\\) equals \\(B\\)**.
 
-Returning to our example, if we take \\(B = \\{9\\}\\), and then thinking of \\(\\{9\\}\\) as being exactly the same as \\(9\\), we can recover the usual notation for the probability of rolling two numbers which sum to \\(9\\):
+Returning to our example, if we take \\(B = \\{9\\}\\), and then thinking of \\(\\{9\\}\\) as being exactly the same as \\(9\\), we can recover the usual notation for the probability of rolling two numbers in a game of dice which sum to \\(9\\):
 
 \\[
 \mathbb{P}\big(X = 9\big) = \frac{1}{9}
@@ -184,6 +184,11 @@ And then finally, we can simpy write
 \\]
 
 depending on the clarity of the context.
+
+### Bonus
+<br/>
+
+Given any set \\(\mathscr{U}\\), we say that \\(\mathscr{U}\\) happens *almost surely* (a.s.) if \\(\mathbb{P}\big(\mathscr{U}\big) = 1 \\). This explains the title. 
 
 ***
 
