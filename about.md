@@ -10,3 +10,9 @@ It is said that mathematics is the language of the universe, and I see it everyw
 
 
 This to me is the most exciting journey to be on. I call it my True North, and it all started with the question: what do I believe in. 
+
+***
+
+I completely advocate for the ethical and responsible use of statistical models that rely on data and model assumptions. This is an extremely important topic and only if we (globally) take part in this discussion, and acknowledge and act upon what it means, can we (everyone) ensure that the new age of data and machine learning empowers humanity.
+
+As a starting point: https://datapractices.org/manifesto/
