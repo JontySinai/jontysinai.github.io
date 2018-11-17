@@ -13,3 +13,10 @@ This to me is the most exciting journey to be on. I call it my True North, and i
 
 
 I'm currently an AI Resident at Microsoft Research in Cambridge, United Kingdom. Before that I did my masters in mathematics at the University of Cambridge. Even before that I worked as data scientist at RMB Foundery in Johannesburg. But right in the beginning, my journey into applied mathematics started at the University of the Witwatersrand in Braamfontein, Johannesburg. 
+
+
+***
+
+I completely advocate for the ethical and responsible use of statistical models that rely on data and model assumptions. This is an extremely important topic and only if we (globally) take part in this discussion, and acknowledge and act upon what it means, can we (everyone) ensure that the new age of data and machine learning empowers humanity.
+
+As a starting point: [https://datapractices.org/manifesto/](https://datapractices.org/manifesto/)
