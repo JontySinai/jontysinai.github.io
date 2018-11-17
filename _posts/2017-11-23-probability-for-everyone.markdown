@@ -14,7 +14,7 @@ use_math : true
 # Chance and Nature
 <br/>
 
-If you're reading this post, then at some point you've encountered chance. Chance is intertwined with nature, just as the planets revolve around the sun. But unlike the laws of motion of the universe, chance is uncertain. Every time you've played a game involving the roll of dice, or forgot to check the weather before stepping outside, or clicked next on your Spotify playlist, you've taken a bet against chance, without knowing with certainty what hand the universe will play. 
+If you're reading this post, then at some point you've encountered chance. Chance is intertwined with nature, just as the planets revolve around the sun or as our genetic code unwinds and transforms from one generation to the next. But unlike the laws of motion of the universe, chance is uncertain. Every time you've played a game involving the roll of dice, or forgot to check the weather before stepping outside, or clicked next on your music streaming service, you've taken a bet against chance. All without knowing with certainty what hand the universe will play. 
 
 Chance, as we know it, is the possibility that something will happen - say that you roll 6 or that the sun will be shining on your way home\*. Probability is the measure of the *likelihood* that something will happen - i.e. the probability that you roll a 6 is 1 in 6 (assuming of course that the dice is as you would expect). 
 
