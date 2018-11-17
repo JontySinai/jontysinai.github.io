@@ -8,6 +8,7 @@ image: /assets/article_images/2017-11-23-probability-for-everyone/patrick-fore-3
 use_math : true
 ---
 
+
 *Inspired by a course which I am taking in probability theory, this blogpost is an attempt to explain the fundamentals of the mathematical theory of probability at an intuitive level. As the title suggests, this post is pretty much intended for everyone, regardless of mathematical level or ability. There will be some mathematics, but feel free to skip through these sections. The important stuff comes in between the mathematics.*
 
 # Chance and Nature
