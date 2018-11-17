@@ -111,7 +111,11 @@ The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements
 
 > Events in \\(\mathscr{F}\\) are made up of elementary events (or the lack thereof, e.g. the event that you **don't** roll two 6's).
 
-The next step is to define the notion of a *random variable*. Our intuition says that this must be some kind of variable that takes its values at random. Mathematically, this isn't as obvious to define. The formal definition will follow our intuition in the following way: when we measure the probability of an event, we start by measuring how likely we are to observe an event. In the case of the dice example, we can observe the sum of two dice being \\(9\\) in four ways, as listed in the set \\(A\\). We will do the same thing in general by starting with a set of outcomes and measuring the size of set of possibilities that could lead to that outcome. 
+The next step is to define the notion of a *random variable*. Our intuition says that this must be some kind of variable that takes its values at random. Mathematically, this isn't as obvious to define. The formal definition will follow our intuition in the following way: 
+
+> When we measure the probability of an event, we start by measuring how likely we are to **observe** an event. 
+
+In the case of the dice example, we can observe the sum of two dice being \\(9\\) in four ways, listed by the elements of the set \\(A\\). We will do the same thing in general by starting with a set of outcomes and measuring the size of the set of possibilities that could lead to that outcome. 
 
 We formalise this as follows: let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary events from \\(\Omega\\) to the *real line* (i.e. all the usuals numbers that we are familiar with). Then the function \\(X\\) will be a **random variable** if the *inverse image* of any subset \\(B \subset \mathbb{R}\\) (the symbol \\(\subset\\) is used to indicate that \\(B\\) is a subset of \\(\mathbb{R}\\)) is contained in \\(\mathscr{F}\\). 
 
@@ -142,7 +146,7 @@ We know that \\(A \in \mathscr{F}\\). So far, so good. In fact, since we include
 
 Relating the maths back to our intuition, how do we interpret the formal condition that \\(X:\Omega \to \mathbb{R}\\) is a **random variable** if \\(X^{-1}(B) \in \mathscr{F}\\) for any subset \\(B \subset \mathbb{R}\\) of real numbers? We can think of this in the following way:
 
-> If we make some observation, \\(B\\), which is *quantifiable* in \\(\mathbb{R}\\), then \\(X^{-1}(B)\\) is the set of possible events, through which the **random variable \\(X\\) leads to \\(B\\)**. In other words, the **size of \\(X^{-1}(B)\\)** is the **chance** of \\(B\\) happening as governed by the **random generating mechanism** of \\(X\\).
+> If we make some observation, \\(B\\), which is *quantifiable* in \\(\mathbb{R}\\), then \\(X^{-1}(B)\\) is the set of possible events, through which the **random variable \\(X\\) leads to \\(B\\)**. In other words, the releative **size** \\(X^{-1}(B)\\) is the **chance** of \\(B\\) happening as governed by the **random generating mechanism** of \\(X\\).
 
 In fact, this is precisely what we do when we *measure* the likelihood of \\(B\\) using the probability measure:
 
