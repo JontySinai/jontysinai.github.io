@@ -42,7 +42,7 @@ Consider a game of throwing two fair dice. We would like to measure the likeliho
     X(3,6) \to 9
 \\]
 
-We would like to consider the set of all such possible combinations of dice throws. We call this set \\(\Omega\\), which we can enumerate compactly as
+We would like to consider the set of all such possible combinations of dice throws. We call this set \\(\Omega\\) (capital *omega*), which we can enumerate compactly as
 
 \\[
 \Omega = \big\\{(i,j): 1\leq i,j \leq6\big\\}
@@ -50,7 +50,7 @@ We would like to consider the set of all such possible combinations of dice thro
 
 > The pair \\((3,6)\\) is then a member of \\(\ \Omega\\), which we write: \\((3,6) \in \Omega\\). 
 
-However, if we consider the event that a given dice throw sums to \\(9\\), then we can see that there is more than one possible combination, i.e. the pairs:
+However, if we consider the event that a given throw of dice sums to \\(9\\), then there is more than one possible combination, i.e. the pairs:
 
 \\[
 A = \big\\{(3,6), (4,5), (5,4), (6,3) \big\\}
@@ -70,7 +70,7 @@ Now that we have a set of events, we can proceed to our goal of measuring the li
 
 The ambiguity of course lies in what we mean precisely by the *size* of \\(F\\) or \\(\Omega\\), but this is a debate for another day! In our simple example, this is fairly easy:
 
-* In the case of *one* die, there are 6 outcomes of a roll, i.e. \\(\Omega_1 = \\{1,2,3,4,5,6\\}\\). There is only one way of rolling a \\(1\\), so 
+* In the case of *one* die, there are 6 outcomes of a roll, let's call them \\(\Omega_1 = \\{1,2,3,4,5,6\\}\\). There is only one way of rolling a \\(1\\), so 
 \\[
     \mathbb{P}(1) = \frac{size\big(\\{1\\}\big)}{size(\Omega_1)} = \frac{1}{6}
 \\]
@@ -87,7 +87,7 @@ and taking \\(A\\) as above:
     \mathbb{P}(A) = \frac{size(A)}{size(\Omega)} = \frac{4}{36} = \frac{1}{9}
 \\]
 
-Equipped with a set of outcomes, \\(\Omega\\), a family of events, \\(\mathscr{F}\\) and a measure of probability, \\(\mathbb{P}\\), we have almost everything we need to lay out the foundamental ideas of probability theory. The missing ingredient is the function we defined at the beginning of this section: \\(X\\). This function is a tricky object and handling it requires some care. In other words a bit more math, which we will cover shortly. For now, I will claim that we can use \\(X\\) to *encode the randomness* of the example game.
+Equipped with a set of outcomes, \\(\Omega\\), a family of events, \\(\mathscr{F}\\), and a measure of probability, \\(\mathbb{P}\\), we have almost everything we need to lay out the foundamental ideas of probability theory. The missing ingredient is the function we defined at the beginning of this section: \\(X\\). This function is a tricky object and handling it requires some care. In other words a bit more math, which we will cover shortly. For now, I will claim that we can use \\(X\\) to *encode the randomness* of the example game.
 
 \* <small> Technically \\(\mathscr{F}\\) is what we call a *\\(\sigma\\)-algebra* on \\(\\Omega\\).
 <small/>
@@ -107,23 +107,23 @@ is known as a *probability measure*.
 
 > The requirement that \\(\ \mathbb{P}(\Omega) = 1\\) reflects the logic that in the world of \\(\big(\Omega, \mathscr{F}, \mathbb{P}\big)\\) something has got to happen from \\(\Omega\\).
 
-The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements \\(\omega \in \Omega\\) (equivalently \\(\\{\omega\\} \in \mathscr{F}\\)) are called **elementary events** (or **realisations**). 
+The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements \\(\omega\)) (lowercase *omega*) \\\in \Omega\\) (equivalently \\(\\{\omega\\} \in \mathscr{F}\\)) are called **elementary events** (or **realisations**). 
 
 > Events in \\(\mathscr{F}\\) are made up of elementary events (or the lack thereof, e.g. the event that you **don't** roll two 6's).
 
-The next step is to define the notion of a *random variable*. Our intuition says that this must be some kind of variable that takes its values at random. Mathematically, this isn't as obvious to define. We'll proceed by getting the construction out of the way, then relating it back to our intuition.
+The next step is to define the notion of a *random variable*. Our intuition says that this must be some kind of variable that takes its values at random. Mathematically, this isn't as obvious to define. The formal definition will follow our intuition in the following way: when we measure the probability of an event, we start by measuring how likely we are to observe an event. In the case of the dice example, we can observe the sum of two dice being \\(9\\) in four ways, as listed in the set \\(A\\). We will do the same thing in general by starting with a set of outcomes and measuring the size of set of possibilities that could lead to that outcome. 
 
-Let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary events from \\(\Omega\\) to the *real line* (i.e. the dense numbers as we know them). Then the function \\(X\\) will be a **random variable** if the *inverse image* of any subset \\(B \subset \mathbb{R}\\) (the symbol \\(\subset\\) is used to indicate that \\(B\\) is a subset of \\(\mathbb{R}\\)) is contained in \\(\mathscr{F}\\). 
+We formalise this as follows: let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary events from \\(\Omega\\) to the *real line* (i.e. all the usuals numbers that we are familiar with). Then the function \\(X\\) will be a **random variable** if the *inverse image* of any subset \\(B \subset \mathbb{R}\\) (the symbol \\(\subset\\) is used to indicate that \\(B\\) is a subset of \\(\mathbb{R}\\)) is contained in \\(\mathscr{F}\\). 
 
-> A function's **inverse image** of a given set, \\(B\\), is the set of elements which it sends to \\(B\\). So for \\(X:\Omega \to \mathbb{R}\\), this is defined as:
+> A function's **inverse image** of a given set, \\(B\\), is the set of elements which it sends to \\(B\\). For \\(X:\Omega \to \mathbb{R}\\), this is defined as:
 > \\[
 X^{-1}(B) = \\{\omega \in \Omega : X(\omega) \subset B\\}
 \\]
-> where \\(B \subset \mathbb{R}\\).
+> where \\(B \subset \mathbb{R}\\). 
 
 ***
 
-For instance, consider the function \\(X\\) from our working example of a game of two dice. Then the inverse image of \\(9\\) (taking \\(\\{9\\}\\) as a subset of \\(\mathbb{R}\\)) is
+For instance, if we return to the function \\(X\\) from our working example of a game of two dice. Then the inverse image of \\(9\\) (taking \\(\\{9\\}\\) as a subset of \\(\mathbb{R}\\)) is
 
 \\[\begin{align}
 X^{-1}\big(\\{9\\}\big) & = \big\\{(i,j) \in \Omega : X\big((i,j)\big) = 9\big\\} \\\
@@ -140,17 +140,17 @@ We know that \\(A \in \mathscr{F}\\). So far, so good. In fact, since we include
 ## Random Variables and Randomness
 <br/>
 
-The condition that \\(X:\Omega \to \mathbb{R}\\) is a **random variable** if \\(X^{-1}(B) \in \mathscr{F}\\) for any subset \\(B \subset \mathbb{R}\\) of real numbers, can be interpreted in the following way:
+Relating the maths back to our intuition, how do we interpret the formal condition that \\(X:\Omega \to \mathbb{R}\\) is a **random variable** if \\(X^{-1}(B) \in \mathscr{F}\\) for any subset \\(B \subset \mathbb{R}\\) of real numbers? We can think of this in the following way:
 
-> If we make some observation, \\(B\\), which is *quantifiable* in \\(\mathbb{R}\\), then \\(X^{-1}(B)\\) tells us the **mechanism which generated \\(B\\)**. In other words, the **chance** of \\(B\\) happening as governed by the **randomness** of \\(X\\).
+> If we make some observation, \\(B\\), which is *quantifiable* in \\(\mathbb{R}\\), then \\(X^{-1}(B)\\) is the set of possible events, through which the **random variable \\(X\\) leads to \\(B\\)**. In other words, the **size of \\(X^{-1}(B)\\)** is the **chance** of \\(B\\) happening as governed by the **random generating mechanism** of \\(X\\).
 
-In fact, we can *measure* the likelihood of \\(B\\) happening by taking the following:
+In fact, this is precisely what we do when we *measure* the likelihood of \\(B\\) using the probability measure:
 
 \\[
 \mathbb{P}\big(X^{-1}(B)\big) = \mathbb{P}\big(\\{\omega \in \Omega : X(\omega) \subset B\\}\big)
 \\]
 
-Motivated by this equivalence, as well as the desire for coherence (usually we don't think of events in terms of inverse images!), we can simply write
+Motivated by this equivalence, as well as the desire for intuitive coherence (usually we don't think of events in terms of inverse images!), we can simply write
 
 \\[
 \mathbb{P}\big(X \subset B\big) \ \ \text{in place of} \ \ \mathbb{P}\big(X^{-1}(B)\big)
@@ -164,27 +164,27 @@ However, the set containment symbol looks a little unwieldy and is just there fo
 \mathbb{P}\big(X = B\big) \ \ \text{in place of} \ \ \mathbb{P}\big(X \subset B\big)
 \\]
 
-> This simply reads as the **probability that \\(X\\) equals \\(B\\)**.
+> We read this as the **probability that \\(X\\) equals \\(B\\)**, which simply means the *probability that the random variable \\(X\\) takes on the value \\(B\\)*.
 
-Returning to our example, if we take \\(B = \\{9\\}\\), and then thinking of \\(\\{9\\}\\) as being exactly the same as \\(9\\), we can recover the usual notation for the probability of rolling two numbers in a game of dice which sum to \\(9\\):
+Returning to our example, if we take \\(B = \\{9\\}\\), and then simply writing \\(9\\) instead of \\(\\{9\\}\\), we can recover the usual notation for the probability of rolling two numbers in a game of dice which sum to \\(9\\):
 
 \\[
 \mathbb{P}\big(X = 9\big) = \frac{1}{9}
 \\]
 
-We can also take a more direct approach and begin in terms of the event of an interest, say some \\(A \in \mathscr{F}\\) which generates some observation. Then we take
+Finally we can take a more direct approach to measuring probability by beginning with the event of an interest, say some \\(A \in \mathscr{F}\\) which generates some observation. To measure its likelihood we start by evaluating the random variable on this event:
 
 \\[
 B = X(A) = \\{X(\omega): \omega \in A\\}
 \\]
 
-And then finally, we can simpy write
+Then we calculate:
 
 \\[
-\mathbb{P}(A) \ \ \text{or} \ \ \mathbb{P}\big(X(A) = B\big) \ \ \text{or} \ \ \mathbb{P}(X = B) \ \ \text{or} \ \ \mathbb{P}(B)
+\mathbb{P}(A) = \mathbb{P}\big(X(A) = B\big) = \mathbb{P}(X = B) = \mathbb{P}(B)
 \\]
 
-depending on the clarity of the context.
+choosing whichever notation is more clear, depending on the context.
 
 ### Bonus
 <br/>
