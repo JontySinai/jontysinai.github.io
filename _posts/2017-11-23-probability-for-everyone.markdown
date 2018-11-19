@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Probability for Everyone, a.s."
+title:  "Probability Part 1: Probability for Everyone, a.s."
 date:   2017-11-23
 categories: jekyll update
 tags: ['featured', 'probability', 'mathematics']
@@ -87,7 +87,7 @@ and taking \\(A\\) as above:
     \mathbb{P}(A) = \frac{size(A)}{size(\Omega)} = \frac{4}{36} = \frac{1}{9}
 \\]
 
-Equipped with a set of outcomes, \\(\Omega\\), a family of events, \\(\mathscr{F}\\), and a measure of probability, \\(\mathbb{P}\\), we have almost everything we need to lay out the foundamental ideas of probability theory. The missing ingredient is the function we defined at the beginning of this section: \\(X\\). This function is a tricky object and handling it requires some care. In other words a bit more math, which we will cover shortly. For now, I will claim that we can use \\(X\\) to *encode the randomness* of the example game.
+Equipped with a set of outcomes, \\(\Omega\\), a family of events, \\(\mathscr{F}\\), and a measure of probability, \\(\mathbb{P}\\), we have almost everything we need to lay out the fundamental ideas of probability theory. The missing ingredient is the function we defined at the beginning of this section: \\(X\\). This function is a tricky object and handling it requires some care. In other words a bit more math, which we will cover shortly. For now, I will claim that we can use \\(X\\) to *encode the randomness* of the example game.
 
 \* <small> Technically \\(\mathscr{F}\\) is what we call a *\\(\sigma\\)-algebra* on \\(\\Omega\\).
 <small/>
