@@ -13,7 +13,7 @@ use_math : true
 # A Game of Dice
 <br/>
 
-In my last post I discussed probability as a way of the measuring the uncertainty of an event. We thought of probability as assigning a weight to the chance that an event has a particular outcome, which we measured relative to other possible outcomes. We defined an event space, which we called \\(\Omega\\). On this space of events we defined a _random variable_, \\(X\\), as a function which maps each event to our observed outcomes, encoded as numbers on the real line, \\(R\\):
+In my last post I discussed probability as a way of the measuring the uncertainty of an event. We thought of probability as assigning a weight to the chance that an event has a particular outcome, which we measured relative to other possible outcomes. We defined an event space, which we called \\(\Omega\\). On this space of events we defined a _random variable_, \\(X\\), as a function which maps each event to our observed outcomes, encoded as numbers on the real line, \\(\mathbb{R}\\):
 
 \\[
     X:\Omega \to \mathbb{R}.
@@ -153,8 +153,6 @@ Finally we can view the intersection as a restriction of our event of interest t
 <br/>
 
 It turns out that the intersection is symmetric: the projection of \\(A\\) onto \\(B\\) is identical to the projection of \\(B\\) onto \\(A\\). Indeed the diagrams from earlier reinforce this. 
-
-[pciture here]
 
 Based on the same procedure we could have just as easily derived the conditional probability 
 
