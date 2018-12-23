@@ -82,7 +82,7 @@ For example, if \\(A\\) is the event our rolls add up to \\(9\\), we can include
 
 ![](/assets/article_images/2018-12-23-probability-part-two-conditional-probability/set_a_b.png)
 
-This was the one configuration leading to \\(9\\), with a \\(3\\) on the first roll. However, since this a point in \\(Omega\\), why don't we measure it's probability as \\(\mathbb{P}\big((3,6)\big)= 1/36\\)? That would depend on what we were looking for. In particular we were interested in the _probability of \\(9\\), given that we have already rolled a \\(3\\)_. If we have already rolled a \\(3\\), then we are no longer in the whole space \\(\Omega\\). 
+This was the one configuration leading to \\(9\\), with a \\(3\\) on the first roll. However, since this a point in \\(\Omega\\), why don't we measure it's probability as \\(\mathbb{P}\big((3,6)\big)= 1/36\\)? That would depend on what we were looking for. In particular we were interested in the _probability of \\(9\\), given that we have already rolled a \\(3\\)_. If we have already rolled a \\(3\\), then we are no longer in the whole space \\(\Omega\\). 
 
 >Configurations such as \\((2, 4)\\), \\((1, 5)\\) and \\((4, 1)\\) are no longer available to us, so clearly we have to redefine our space of interest. 
 
