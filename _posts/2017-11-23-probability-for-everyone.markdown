@@ -116,6 +116,7 @@ The next step is to define the notion of a *random variable*. Our intuition says
 > When we measure the probability of an event, we start by measuring how likely we are to **observe** an event. 
 
 ### The Preimage
+<br/>
 
 In the case of the dice example, we can observe the sum of two dice being \\(9\\) in four ways, listed by the elements of the set \\(A\\). We will do the same thing in general by starting with a set of outcomes and measuring the size of the set of possibilities that could lead to that outcome. 
 

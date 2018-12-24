@@ -25,9 +25,9 @@ The probability of an outcome is then the size of the number of possible events 
     \mathbb{P}:\mathscr{F} \to [0,1].
 \\]
 
-We called the set of possible events the _preimage_ of the random variable. If \\(B\\) is an outcome, then the preimage of \\(B\\) is \\(X^{-1}(B)\\) and the probability of \\(B\\) is the relative size of the preimage, given by \\(\mathbb{P} \big((X^{-1}(B)\big)\\).
+We called the set of possible events the [_preimage_](https://jontysinai.github.io/jekyll/update/2017/11/23/probability-for-everyone.html#the-preimage) of the random variable. If \\(B\\) is an outcome, then the preimage of \\(B\\) is \\(X^{-1}(B)\\) and the probability of \\(B\\) is the relative size of the preimage, given by \\(\mathbb{P} \big((X^{-1}(B)\big)\\).
 
-For instance, in the dice example from the last post where we considered the experiment of rolling two die and adding the numbers, if we observe an _outcome_ \\(9\\), then there were four possible _events_ which could add up to 9, namely \\((3,6)\\), \\((4,5)\\), \\((5,4)\\) and (\\(6,3)\\). We called this set \\(A\\). Since there are \\(36\\) possible outcomes in \\(\Omega\\), we can then measure the probability of getting a \\(9\\) by the relative size of \\(A\\) with respect to \\(\Omega\\). If \\(X\\) is the random variable representing our experiment, then \\(A\\) is the preimage of the observation \\(X = 9\\), and the probability of A is
+For instance, in the dice example from the last post where we considered the experiment of rolling two die and adding the numbers, if we observe an _outcome_ \\(9\\), then there were four possible _events_ which could add up to 9, namely \\((3,6)\\), \\((4,5)\\), \\((5,4)\\) and (\\(6,3)\\). We called this set \\(A\\). Since there are [\\(36\\)](https://qph.fs.quoracdn.net/main-qimg-13d2e066e80c0ac1511e0477c6ffdcb4-c) possible outcomes in \\(\Omega\\), we can then measure the probability of getting a \\(9\\) by the relative size of \\(A\\) with respect to \\(\Omega\\). If \\(X\\) is the random variable representing our experiment, then \\(A\\) is the preimage of the observation \\(X = 9\\), and the probability of A is
 
 \\[
     \mathbb{P}(A) = \frac{4}{36} = \frac{1}{9}.
@@ -100,14 +100,14 @@ Now, when we take the probability of \\(9\\), _given_ that we have rolled a \\(3
                 & \\\
                 & = \dfrac{size(A\cap B)}{size(B)} \\\
                 & \\\
-                & = \dfrac{1}{6}
+                & = \dfrac{1}{6}.
 \end{align}\\]
 
 
 # Conditional Probability
 <br/>
 
-What I have just demonstrated is known as the **condtional probability** of an event. It is the probability of the event \\(A\\), _conditional_ on the event \\(B\\). By thinking of _conditioning_ as a restriction on the size of the event space, we can measure the _conditional probability of \\(A\\) given \\(B\\)_ as
+What have just seen is known as the **condtional probability** of an event. It is the probability of the event \\(A\\), _conditional_ on the event \\(B\\). By thinking of _conditioning_ as a restriction on the size of the event space, we can measure the _conditional probability of \\(A\\) given \\(B\\)_ as
 
 \\[
     \mathbb{P}(A| B) = \frac{size(A\cap B)}{size(B)}.
