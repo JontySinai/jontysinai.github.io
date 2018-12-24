@@ -115,11 +115,13 @@ The next step is to define the notion of a *random variable*. Our intuition says
 
 > When we measure the probability of an event, we start by measuring how likely we are to **observe** an event. 
 
+### The Preimage
+
 In the case of the dice example, we can observe the sum of two dice being \\(9\\) in four ways, listed by the elements of the set \\(A\\). We will do the same thing in general by starting with a set of outcomes and measuring the size of the set of possibilities that could lead to that outcome. 
 
-We formalise this as follows: let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary events from \\(\Omega\\) to the *real line* (i.e. all the usuals numbers that we are familiar with). Then the function \\(X\\) will be a **random variable** if the *inverse image* of any subset \\(B \subset \mathbb{R}\\) (the symbol \\(\subset\\) is used to indicate that \\(B\\) is a subset of \\(\mathbb{R}\\)) is contained in \\(\mathscr{F}\\). 
+We formalise this as follows: let \\(X:\Omega \to \mathbb{R}\\) be a function which sends the elementary events from \\(\Omega\\) to the *real line* (i.e. all the usuals numbers that we are familiar with). Then the function \\(X\\) will be a **random variable** if the *preimage* of any subset \\(B \subset \mathbb{R}\\) (the symbol \\(\subset\\) is used to indicate that \\(B\\) is a subset of \\(\mathbb{R}\\)) is contained in \\(\mathscr{F}\\). 
 
-> A function's **inverse image** of a given set, \\(B\\), is the set of elements which it sends to \\(B\\). For \\(X:\Omega \to \mathbb{R}\\), this is defined as:
+> A function's **preimage** of a given set, \\(B\\), is the set of elements which it sends to \\(B\\). For \\(X:\Omega \to \mathbb{R}\\), this is defined as:
 > \\[
 X^{-1}(B) = \\{\omega \in \Omega : X(\omega) \subset B\\}
 \\]
@@ -127,7 +129,7 @@ X^{-1}(B) = \\{\omega \in \Omega : X(\omega) \subset B\\}
 
 ***
 
-For instance, if we return to the function \\(X\\) from our working example of a game of two dice. Then the inverse image of \\(9\\) (taking \\(\\{9\\}\\) as a subset of \\(\mathbb{R}\\)) is
+For instance, if we return to the function \\(X\\) from our working example of a game of two dice. Then the preimage of \\(9\\) (taking \\(\\{9\\}\\) as a subset of \\(\mathbb{R}\\)) is
 
 \\[\begin{align}
 X^{-1}\big(\\{9\\}\big) & = \big\\{(i,j) \in \Omega : X\big((i,j)\big) = 9\big\\} \\\
@@ -136,7 +138,7 @@ X^{-1}\big(\\{9\\}\big) & = \big\\{(i,j) \in \Omega : X\big((i,j)\big) = 9\big\\
                 & = A
 \end{align}\\]
 
-We know that \\(A \in \mathscr{F}\\). So far, so good. In fact, since we include the empty set, \\(\emptyset\\), as part of \\(\mathscr{F}\\), it turns out that the inverse image of *any* subset of \\(\mathbb{R}\\) is in \\(\mathscr{F}\\). So \\(X\\) satisfies the condition\* for it to be a random variable.
+We know that \\(A \in \mathscr{F}\\). So far, so good. In fact, since we include the empty set, \\(\emptyset\\), as part of \\(\mathscr{F}\\), it turns out that the preimage of *any* subset of \\(\mathbb{R}\\) is in \\(\mathscr{F}\\). So \\(X\\) satisfies the condition\* for it to be a random variable.
 
 
 \* <small>In reality this condition is a technical requirement which we don't have to worry about in most (computational) settings. Rather we will be more concerned if the setting we end up using makes sense.<small/>
@@ -154,7 +156,7 @@ In fact, this is precisely what we do when we *measure* the likelihood of \\(B\\
 \mathbb{P}\big(X^{-1}(B)\big) = \mathbb{P}\big(\\{\omega \in \Omega : X(\omega) \subset B\\}\big)
 \\]
 
-Motivated by this equivalence, as well as the desire for intuitive coherence (usually we don't think of events in terms of inverse images!), we can simply write
+Motivated by this equivalence, as well as the desire for intuitive coherence (usually we don't think of events in terms of preimages!), we can simply write
 
 \\[
 \mathbb{P}\big(X \subset B\big) \ \ \text{in place of} \ \ \mathbb{P}\big(X^{-1}(B)\big)
