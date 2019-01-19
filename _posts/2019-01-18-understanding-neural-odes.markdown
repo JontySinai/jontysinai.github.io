@@ -225,7 +225,7 @@ This is an explicit algebraic description of the stepwise procedure which I desc
     y(t + \delta) = y(t) + \delta f(t, y).
 \\]
 
-Finally to compute approximations for \\(y\\) using Euler's method, we need to discretize the domains. Starting from an initial point \\((t_0, y_0\\), we define a **computation trajectory** recursively as follows:
+Finally to compute approximations for \\(y\\) using Euler's method, we need to discretize the domains. Starting from an initial point \\((t_0, y_0)\\), we define a **computation trajectory** recursively as follows:
 
 \\[
     t_{n+1} = t_{n} + \delta (n+1), \ \ \ \ n = 0, 1, 2, ... 
@@ -259,7 +259,7 @@ In particular we can make an initial guess for \\(a\\) and use Euler's method to
 
 You can then calculate the loss by comparing Euler's method evaluated at the \\(k\\) chosen datapoints with their actual values. In the backward pass you can calculate a derivative of your loss function with respect to \\(a\\), for each evaluation point, and adjust it as you would in gradient descent.
 
-In summary, by using Euler's method in the context of a machine learning _optimisation_ problem, we treat \\(a\\) as a free parameter. Importantly \\(a\\) is the only free parameter and can use it to describe a linear relationship which typically requires two parameters.
+In summary, by using Euler's method in the context of a machine learning _optimisation_ problem, we treat \\(a\\) as a free parameter. Importantly \\(a\\) is the only free parameter and can be used to describe a linear relationship which typically requires two parameters.
 
 ### Computational Cost
 <br/>
@@ -294,7 +294,7 @@ So far I've described how we can use an ODE to solve a data modelling problem. W
 
 With *deep learning* we can go even further. We know that neural networks are [_universal function approximators_](http://neuralnetworksanddeeplearning.com/chap4.html). So what if we used our neural network to approximate \\(f\\)? In theory if we can approximate the derivative of any differentiable function using a neural network, then we have a powerful modelling tool at hand. We also have a lot more flexibility in the data modelling process. 
 
-In particular, consider a neural network where the _hidden states_ all have the same dimension (this will also be helpful for visualising their evolutionary trajectories later). Each hidden state depends on a _neural layer_, \\(f\\), which itself depends on _(free) parameters_ \\(theta_t\\),  where \\(t\\) is the _layer depth_. Then
+In particular, consider a neural network where the _hidden states_ all have the same dimension (this will also be helpful for visualising their evolutionary trajectories later). Each hidden state depends on a _neural layer_, \\(f\\), which itself depends on _(free) parameters_ \\(\theta_t\\),  where \\(t\\) is the _layer depth_. Then
 
 \\[
     h_{t+1} = f(h_{t}, \theta_{t}).
@@ -306,9 +306,9 @@ If we have a *residual network*, then this looks like
     h_{t+1} = h_{t} + f(h_{t}, \theta_{t}).
 \\]
 
-One of the intuitions which inspired the paper is that this has a similar form to Euler's method which we described above. To understand this, remember that Euler's method is a discretisation of the _continuous relationship_ between the input and output domains of the data. 
+One of the intuitions which inspired the paper is that this has a similar form to Euler's method which we described above. To understand this, remember that Euler's method is a discretisation of the _continuous relationship_ between the input and output domains of the data. Neural networks are also discretisations of this continuous relationship, only the discretisation is through hidden states in a latent space. Residual neural networks create a pathway through this latent space by allowing states to depend directly on each other, just like the updates in Euler's method.
 
->Typical neural networks try to model this relationship directly, but a _residual neural network_ appears to follow the modelling pattern of an ODE: namely that the continuous relationship is modelled at the level of the derivative.
+>_Residual neural network_ appears to follow the modelling pattern of an ODE: namely that the continuous relationship is modelled at the level of the derivative.
 
 To take this logic full circle, we consider the **continuous limit** of each discrete layer in the network. _This is the radical idea proposed by neural ODE's_. Instead of a discrete number of layers between the input and output domains, we allow the progression of the hidden states to become continuous:
 
@@ -418,7 +418,7 @@ or equivalently
    \frac{\partial\mathscr{L}}{\partial h(t)} = \int  a(t)^{T}\frac{\partial f(t, h(t), \theta_t)}{\partial h(t)} dt,
 \\]
 
-We can solve this integral by making a different call to an ODE solver. To get the gradient at \\(t_0\\), we can run this ODE solver run **backwards** in time from the initial point which is known to us (just like usual backpropagation) at time \\(t_1\\):
+We can solve this integral by making a different call to an ODE solver. To get the gradient at \\(t_0\\), we can run this ODE solver **backwards** in time from the initial point which is known to us (just like usual backpropagation) at time \\(t_1\\):
 
 \\[
     a(t_0) = \int_{t_1}^{t_0} -a(t)^{T}\frac{\partial f(t, h(t), \theta_t)}{\partial h(t)} dt,
@@ -497,9 +497,9 @@ The entire backpropagation algorithm can now be solved by making a call to an OD
 # Tying Everything Together
 <br/>
 
-Thank you for making it to this point. I hope that you now have a better understanding of how nueral ODE's can help solve your data modelling problem. The original paper is not that easy to understand, nor is it clear how it generalises to any data modelling problem. That paper does provide three practical examples, but it is not obvious how neural ODE's tie into the modelling problem. 
+Thank you for making it to this point. I hope that you now have a better understanding of how nueral ODE's can help solve your data modelling problem. 
 
-My intention is to explain intuitively how ODE's can model a simple modelling problem, and how they can be optimised (in a simple scenario). The second half of this post extended that simple model to the neural ODE model as it's presented in the paper. We covered how an ODE problem can be paramatrised by a neural network and how the neural network parameters can be optimised by backpropagating through the ODE using the adjoint method. I admit that this was covered at a high level and hopefully in the future I will write a (much shorter!) post on exactly how this algorithm works. 
+My intention is to explain intuitively how ODE's can model a simple modelling problem, and how they can be optimised (in a simple scenario). The second half of this post extended that simple model to the neural ODE model as it's presented in the paper. We covered how an ODE problem can be paramatrised by a neural network and how the neural network parameters can be optimised by backpropagating through the ODE using the adjoint method.
 
 For now, it is worth reiterating the neural ODE approach to solving a data modelling problem. 
 
