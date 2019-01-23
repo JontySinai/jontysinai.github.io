@@ -478,7 +478,7 @@ $$
 where \\(a\\) is the adjoint for the hidden state described above:
 
 \\[
-    a = \frac{\partial\mathscr{L}}{\partial h},
+    a = -\frac{\partial\mathscr{L}}{\partial h},
 \\]
 
 and 
