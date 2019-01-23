@@ -148,7 +148,7 @@ In the basic form of an ODE we allow the derivative to depend not only on \\(x\\
 To keep the notation limited, we'll use \\(f\\) to denote the function describing the derivative in the ODE. The setup is then,
 
 \\[
-    y(x) = f(x, y), \ \ \ \ y(x_0) = y_0,
+    y'(x) = f(x, y), \ \ \ \ y(x_0) = y_0,
 \\]
 
 where \\(y(x)\\) is interpreted as "the value of \\(y\\) at \\(x\\). From the most abstract point of view, nothing much has changed. We are still interested in finding some function - called \\(f\\). What has changed fundamentally, however, is that now this function describes the **rate of change** - how \\(y\\) changes as \\(x\\) changes - as opposed to the direct relationship.
