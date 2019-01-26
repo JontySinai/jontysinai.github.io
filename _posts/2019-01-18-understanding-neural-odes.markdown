@@ -497,7 +497,7 @@ The entire backpropagation algorithm can now be solved by making a call to an OD
 # Tying Everything Together
 <br/>
 
-Thank you for making it to this point. I hope that you now have a better understanding of how nueral ODE's can help solve your data modelling problem. 
+Thank you for making it to this point. I hope that you now have a better understanding of how neural ODE's can help solve your data modelling problem. 
 
 My intention is to explain intuitively how ODE's can model a simple modelling problem, and how they can be optimised (in a simple scenario). The second half of this post extended that simple model to the neural ODE model as it's presented in the paper. We covered how an ODE problem can be paramatrised by a neural network and how the neural network parameters can be optimised by backpropagating through the ODE using the adjoint method.
 
