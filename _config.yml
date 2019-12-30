@@ -22,7 +22,7 @@ github_username:  jontysinai
 twitter_username: jontysinai_
 
 # Build settings
-theme: jekyll-theme-clean-blog
+remote_theme: jekyll-theme-clean-blog
 plugins:
   - jekyll-feed
   - jemoji
