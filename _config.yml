@@ -22,7 +22,8 @@ github_username:  jontysinai
 twitter_username: jontysinai_
 
 # Build settings
-remote_theme: jekyll-theme-clean-blog
+# theme: jekyll-theme-clean-blog
+remote_theme: "BlackrockDigital/startbootstrap-clean-blog-jekyll"
 plugins:
   - jekyll-feed
   - jemoji
