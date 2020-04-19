@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Hello world, my name is Jonty.
+# title: Hello world, my name is Jonty.
+statement: Hello world, my name is Jonty.
 background: /assets/about.jpg
 permalink: /about/
 ---
