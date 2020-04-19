@@ -107,7 +107,7 @@ is known as a *probability measure*.
 
 > The requirement that \\(\ \mathbb{P}(\Omega) = 1\\) reflects the logic that in the world of \\(\big(\Omega, \mathscr{F}, \mathbb{P}\big)\\) something has got to happen from \\(\Omega\\).
 
-The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements \\(\omega\)) (lowercase *omega*) \\\in \Omega\\) (equivalently \\(\\{\omega\\} \in \mathscr{F}\\)) are called **elementary events** (or **realisations**). 
+The elements \\(A \in \mathscr{F}\\) are known as **events**, while the elements \\(\omega\\) (lowercase *omega*) \\(\in \Omega\\) (equivalently \\(\\{\omega\\} \in \mathscr{F}\\)) are called **elementary events** (or **realisations**). 
 
 > Events in \\(\mathscr{F}\\) are made up of elementary events (or the lack thereof, e.g. the event that you **don't** roll two 6's).
 
