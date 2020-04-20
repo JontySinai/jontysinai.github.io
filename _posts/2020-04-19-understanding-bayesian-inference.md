@@ -47,7 +47,7 @@ Uncertainty is also desirable when we don't have a large number of samples. In t
 
 As the name implies, Bayesian inference has a lot to do with *Bayes' Theorem*. In fact, Bayes' Theorem will form the bridge between the uncertainty in our data and the uncertainty in our predictions. You may already be familiar with Bayes' Theorem (which I also covered in my post on [conditional probability](https://jontysinai.github.io/jekyll/update/2018/12/23/probability-part-two-conditional-probability.html)), but as a recap here is what we mean by Bayes' Theorem:
 
->*Let \\(A\\) and \\(B\\) be random variables\\(^{\*}\\) with probability measure \\(\mathbb{P}\\), such that \\(\mathbb{P}(B) \neq 0\\), then*
+>*Let \\(A\\) and \\(B\\) be random variables\\(^{\*}\\) with probability measure \\(\mathbb{P}\\), such that \\(\mathbb{P}(A) \neq 0\\), then*
 >\\[
     \mathbb{P}(B|A) = \frac{ \mathbb{P}(A | B)\mathbb{P}(B) }{ \mathbb{P}(A) }.
 \\]
@@ -57,7 +57,7 @@ As the name implies, Bayesian inference has a lot to do with *Bayes' Theorem*. I
 >*  \\(\mathbb{P}(A \| B)\\) is known as the **likelihood** of \\(A\\), given \\(B\\) - it is an estimate of how likely the \\(A\\) that we observed is, given possible values of \\(B\\).
 >*  \\(\mathbb{P}(B \| A)\\) is known as the **posterior probability** of \\(B\\), given \\(A\\) - it is the *conditional probability* of \\(B\\) *after* we have obtained evidence of \\(A\\).
 
-Bayes' Theorem is useful when it is difficult to calculate the posterior of \\(B\\) directly. We use Bayes' Theorem we have obtained data on \\(A\\) and we can measure the likelihood and prior with greater ease.
+Bayes' Theorem is useful when it is difficult to calculate the posterior of \\(B\\) directly. We use Bayes' Theorem when we have obtained data on \\(A\\) and we can measure the likelihood and prior with greater ease.
 
 \* <small> for more detail on random variables and probability measures, see my [introductory post on probability](https://jontysinai.github.io/jekyll/update/2017/11/23/probability-for-everyone.html). 
 </small>
@@ -66,7 +66,7 @@ Bayes' Theorem is useful when it is difficult to calculate the posterior of \\(B
 
 Let's go back to the fundamental modelling problem. We have a parametric function, described by \\(\theta\\), and we want to choose the right \\(\theta\\) so that our function describes the data well. We also want to compute our uncertainty over \\(\theta\\) so that we can make predictions with confidence, and know when this uncertainty is high. 
 
->But what does it mean to include uncertainity into our modelling of \\(f\\) and \\(\theta\\)? 
+>But what does it mean to include uncertainty into our modelling of \\(f\\) and \\(\theta\\)? 
 
 This means precisely to use probabilities - the mathematical language of uncertainty - and in particular it means to use *probability distributions*. Instead of optimizing for a single value of \\(\theta\\), *we can treat \\(\theta\\) as a **random variable** which has **highest probability** at the optimal value*.
 
@@ -88,9 +88,9 @@ What's important in Bayesian inference is that whatever choice of prior we choos
     P(\; \mathscr{D} \;|\; \theta \;).
 \\]
 
-It is through the likelihood that we encode the optimality of \\(\theta\\) into the posterior, which is defined by the degree to which \\(\theta\\) is a good fit for the data. Strictly speaking the likelihood is a function of \\(\theta\\) - we assume the data has been observed and is fixed. With this point of view the likelihood can be interpreted as the *likelihood of the observed data occuring, given the possible values of \\(\theta\\)*. A higher likelihood indicates a better value of \\(\theta\\).
+It is through the likelihood that we encode the optimality of \\(\theta\\) into the posterior, which is defined by the degree to which \\(\theta\\) is a good fit for the data. Strictly speaking the likelihood is a function of \\(\theta\\) - we assume the data has been observed and is fixed. With this point of view the likelihood can be interpreted as the *likelihood of the observed data occurring, given the possible values of \\(\theta\\)*. A higher likelihood indicates a better value of \\(\theta\\).
 
-> * In fact many machine learning loss functions are derived from the likelihood, usually in the form of the negative log-likelihood (applying the log transformation the likelihood helps for numerical stability purposes, especially over a large dataset).
+> * In fact many machine learning loss functions are derived from the likelihood, usually in the form of the negative log-likelihood (applying the log transformation to the likelihood helps for numerical stability purposes, especially over a large dataset).
 > * The likelihood function does not need to strictly be a probability distribution.
 
 Now we can use Bayes' Theorem to write down a formula for the **posterior distribution** of \\(\theta\\):
@@ -99,7 +99,7 @@ Now we can use Bayes' Theorem to write down a formula for the **posterior distri
     P(\; \theta \;|\; \mathscr{D} \;) = \frac{ P(\; \mathscr{D} \;|\; \theta \;)P(\; \theta \;) }{ P(\; \mathscr{D} \;)}.
 \\]
 
-The posterior distribution takes into account our uncertainty over \\(\theta\\) (incoporated in the prior distibution), adjusted by the actual data that we observed (incoporated in the likelihood, and also the evidence of the data). The combination of the likelihood with the prior makes the posterior distribution suitable for estimating optimal values of \\(\theta\\) with the added measure of uncertainty.
+The posterior distribution takes into account our uncertainty over \\(\theta\\) (incorporated in the prior distribution), adjusted by the actual data that we observed (incorporated in the likelihood, and also the evidence of the data). The combination of the likelihood with the prior makes the posterior distribution suitable for estimating optimal values of \\(\theta\\) with the added measure of uncertainty.
 
 >How does this posterior distribution help us? 
 
@@ -120,7 +120,7 @@ Going back to the original function estimation problem, this means that when we 
 But it turns out that calculating this posterior can be **hard** with a capital _H_. For two reasons:
 
 1. The likelihood function is often highly nonlinear and must include every sample from the training dataset. In addition the complexity of the likelihood increases with the dimension of the data.
-2. The evidence, \\(P(\; \mathscr{D} \;)\\), can be extremely hard to compute. It requires knowing how much probability to assign to every possible value which the data can take. In an uncertain world this is prctically impossible.
+2. The evidence, \\(P(\; \mathscr{D} \;)\\), can be extremely hard to compute. It requires knowing how much probability to assign to every possible value which the data can take. In an uncertain world this is practically impossible.
 
 The algorithmic insight is to use what's called **approximate inference**. Instead of calculating the posterior directly, we will try to approximate it.
 
@@ -151,7 +151,7 @@ While I won't go into more detail into each of these algorithms - they are entir
 
 #### A Chicken and Egg problem
 
-You may have noticed that approximate inference has a chicken and egg problem. We want to approximate the posterior by drawing samples, but we how can we draw samples from the posterior if we can't compute it directly? Or we want to approximate the posterior with some parametrised guide distribution, but how do we know that it is a good match for the posterior without evaluating the posterior directly?
+You may have noticed that approximate inference has a chicken and egg problem. We want to approximate the posterior by drawing samples, but how can we draw samples from the posterior if we can't compute it directly? Or we want to approximate the posterior with some parametrised guide distribution, but how do we know that it is a good match for the posterior without evaluating the posterior directly?
 
 We get around this as follows:
 
@@ -163,7 +163,7 @@ We get around this as follows:
 \\[
     argmax\\{\; g \;\\} = argmax\\{\; \frac{1}{C}g \;\\}.
 \\]
->In the case of MCMC specifically, we use an algorithm which explicitly does not require knowing \\(P(\; \mathscr{D} \;)\\) in order to update samples of \\(\theta\\), until we start sampling the \\(\theta\\) with maximum probability.
+>In the case of MCMC specifically, we use an algorithm which explicitly does not require knowing \\(P(\; \mathscr{D} \;)\\) in order to update samples of \\(\theta\\), doing so until we start sampling the \\(\theta\\) with maximum probability.
 3. Once we have the posterior up to a normalization constant, we simply need to normalize the posterior to turn it into a probability distribution.
 
 ## Unravelling the graph
@@ -177,9 +177,10 @@ We can express the cyclic nature of Bayesian inference graphically in the follow
 
 >* Start with a prior distribution on \\(\theta\\), which we can use to sample \\(\theta\\).
 >* What is the likelihood of \\(\theta\\), given the data?
->* We get the posterior probability of \\(\theta\\), which we can use to sample \\(\theta\\)?
+>* We get the posterior probability of \\(\theta\\), which we can use to sample a better estimate of\\(\theta\\).
+>* But we can still test the likelihood of this \\(\theta\\)...
 
-Now we can see what we are trying to do with Bayesian inference a bit better. Start with a prior and likelihood (going forwards on the graph), and then go backwards to calculate a suitable posterior. When we can't calculate this posterior exactly (which we can only do for the simplest of models), then we resort to approximate inference. Approximate inference works by iteratively updating the posterior (forwards) and then checking to see if the samples for \\(\theta\\) are good (backwards). In general approximate inference algorithms work as follows:
+Now we can see what we are trying to do with Bayesian inference a bit better. Start with a prior and likelihood (going forwards on the graph), and then go backwards to calculate a suitable posterior. When we can't calculate this posterior exactly (feasible for only the simplest of models), then we resort to approximate inference. Approximate inference works by iteratively updating the posterior (forwards) and then checking to see if the samples for \\(\theta\\) are good (backwards). In general approximate inference algorithms work as follows:
 
 *Given a prior distribution and likelihood function:*
 
@@ -207,7 +208,7 @@ What we have seen so far is that when we want to express uncertainty over the mo
 
 1. When we have a dataset \\(\mathscr{D} = \big\\{(x_1, y_1), (x_2, y_2), ..., (x_N, y_N)\big\\}\\),
 2. And a model, \\(f: \mathscr{X} \to \mathscr{Y}\\), with parameters \\(\theta\\),
-3. Then we can use Bayes' Theorem to describe a **posterior distribution** over the modelling parameters, \\(\theta\\) by specifying a *prior distribution* and a *likelihood function* so that:
+3. Then we can use Bayes' Theorem to describe a **posterior distribution** over the modelling parameters \\(\theta\\), by specifying a *prior distribution* and a *likelihood function* so that:
 \\[
     P(\; \theta \;|\; \mathscr{D} \;) \propto P(\; \mathscr{D} \;|\; \theta \;)P(\; \theta \;).
 \\]
@@ -234,13 +235,13 @@ To measure the uncertainty of our prediction we can calculate a *sample variance
 
 In traditional machine learning we specify a model and try and find the parameters of the model which best fit the data. The cost function which we use, typically the *likelihood*, gives us a measure of *how well the parameters fit the data*.
 
-Bayesian inference instead seeks to find the *most probable* parameters, given the data. By seeking *most probable*, we imbue model with predictive uncertainty. In Bayesian inference we model a *posterior distribution* over the parameters.
+Bayesian inference instead seeks to find the *most probable* parameters, given the data. By seeking *most probable*, we imbue the model with predictive uncertainty. In Bayesian inference we model a *posterior distribution* over the parameters.
 
 ### Bayesian Inference is an Optimization Paradigm
 
 In the traditional machine learning approach we can only find a single point estimate of the optimal parameter \\(\theta^{\*}\\). This is known as a *maximum likelihood estimate (MLE)* and can be interpreted as follows: *if true, we would likely observe the data which we have under this model*.
 
-In the Bayesian inference approach, we use the likelihood to reshape the prior distribution into a posterior distribution which places *highest probability over the optimal \\(\theta\\)*. This \\(\theta\\) is sometimes known as the *maximum a prosteriori estimate (MAP)*, and can be interpreted as the *parameter which is a best fit for the data, given our uncertainty*.
+In the Bayesian inference approach, we use the likelihood to reshape the prior distribution into a posterior distribution which places *highest probability over the optimal \\(\theta\\)*. This \\(\theta\\) is sometimes known as the *maximum a posteriori estimate (MAP)*, and can be interpreted as the *parameter which is a best fit for the data, given our uncertainty*.
 
 > Take note that when using the predictive distribution above we are not explicitly using the MAP estimate for \\(\theta\\) but rather taking many samples of \\(\theta\\). Of course if our uncertainty over \\(\theta\\) is not too large, than most of the \\(\theta\\) samples will be close to the MAP estimate.
 
